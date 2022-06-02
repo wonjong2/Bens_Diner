@@ -27,13 +27,13 @@ Menu.init(
       allowNull: false,
     },
     // Foreign ID for the category it falls under
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'category',
-    //     key: 'category_id',
-    //   },
-    // },
+    category_id: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'category',
+      //   key: 'category_id',
+      // },
+    },
   },
   {
     sequelize,
