@@ -1,0 +1,22 @@
+[
+  {
+    "item_list": "1,2,3,3,3",
+    "price_total": 29.87,
+    "user_id": 1
+  },
+  {
+    "item_list": "3,4,3,5,5",
+    "price_total": 88.87,
+    "user_id": 2
+  },
+  {
+    "item_list": "2,5,4",
+    "price_total": 18.99,
+    "user_id": 3
+  },
+  {
+    "item_list": "7,7,7",
+    "price_total": 54.22,
+    "user_id": 4
+  }
+]
