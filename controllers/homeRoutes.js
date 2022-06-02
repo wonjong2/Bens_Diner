@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Order } = require("../models");
 const withAuth = require("../utils/auth");
 
-// GET all galleries for homepage
+// GET for the homepage
 router.get("/", async (req, res) => {
   try {
     const insertName = await insertModel.findAll({
@@ -27,10 +27,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Login route
+// Login GET route
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/insert page to redirect to");
     return;
   }
   res.render("login");
