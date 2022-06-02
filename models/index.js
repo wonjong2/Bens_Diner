@@ -20,4 +20,12 @@ Categories.hasMany(Menu, {
   onDelete: "CASCADE",
 });
 
+Menu.hasOne(Categories, {
+  foreignKey: 'id',
+});
+
+Categories.belongsTo(Menu, {
+  foreignKey: 'id'
+});
+
 module.exports = { User, Menu, OrderHistory, Categories };
