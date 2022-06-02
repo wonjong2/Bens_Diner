@@ -12,7 +12,7 @@ OrderHistory.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    //List of menu choices as a concatinated string
+    // List of menu choices as a concatinated string
     item_list: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,13 +21,19 @@ OrderHistory.init(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
-    //User Id to which the order belongs to
+    // User Id to which the order belongs to
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'user_id',
       },
+    },
+    // Date of the order, auto generated
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
