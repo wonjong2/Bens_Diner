@@ -19,4 +19,8 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  // Converts the string
+  orderHistory_to_Array: (historyString) => {
+    return historyString.split(",");
+  }
 };
