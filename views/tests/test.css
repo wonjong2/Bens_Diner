@@ -1,0 +1,45 @@
+:root {
+  --red: #b32c06;
+  --off-white: #fffaef;
+}
+
+html {
+  height: 100%;
+}
+
+/* Header */
+.bg_img {
+  height: 350px;
+  background-color: var(--red);
+}
+
+.header_text {
+  color: var(--off-white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+header h1 {
+  font-size: 6rem;
+  letter-spacing: -5;
+}
+
+header h4 {
+  font-size: 4rem;
+  letter-spacing: -2;
+}
+
+header img {
+  height: 120%;
+  transform: rotate(10deg);
+}
+/* Header */
+
+body {
+  height: 100vh;
+}
+
+#qrCode {
+  border-right: solid 1px black;
+}
+/* Main Content */
