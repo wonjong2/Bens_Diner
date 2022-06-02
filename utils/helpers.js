@@ -21,19 +21,25 @@ module.exports = {
   },
   // Converts the item_list string storing the list of dishes in the order history into an array for client side parsing/usage
   orderHistory_to_Array: (historyString) => {
-    return historyString.split(",");
+    let historyArray = historyString.split(",");
+    return historyArray.map(entry => parseInt(entry))
+
   },
-  // Converts the array storing the list of dishes in the order history into an string to store as item_list in the orderHistory table
+  // Converts the array storing the list of dishes in the order history into an string to store as an item_list entry in the orderHistory table
   orderHistory_to_String: (historyArray) => {
     var orderString ="";
+
     if(historyArray.length==1) {
       orderString = historyArray[0].toString();
       return orderString;
     }
+
     for (let i=0; i<historyArray.length-1; i++) {
-
+      orderString = orderString + historyArray[i].toString() + ",";
     }
-    return historyString.split(",");
-  }
 
+    orderString = orderString + historyArray[historyArray.length-1].toString();
+
+    return orderString;
+  }
 };
