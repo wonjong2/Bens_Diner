@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Menu extends Model {}
 
@@ -27,20 +27,20 @@ Menu.init(
       allowNull: false,
     },
     // Foreign ID for the category it falls under
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'category',
-    //     key: 'category_id',
-    //   },
-    // },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "categories",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'menu',
+    modelName: "menu",
   }
 );
 

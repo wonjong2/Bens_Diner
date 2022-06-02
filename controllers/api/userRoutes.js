@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Menu, OrderHistory, Categories } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //at the /api/user/login either redirect the user or render the login handlebars file

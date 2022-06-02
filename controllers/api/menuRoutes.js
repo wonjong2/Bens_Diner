@@ -1,28 +1,23 @@
 const router = require("express").Router();
-const { Menu, Order } = require("../models");
+const { User, Menu, OrderHistory, Categories } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // GET route for menu page
 router.get("/", async (req, res) => {
   try {
-    const getMenu = await insertModel.findAll({
-      include: [
-        {
-          model: insertModel,
-          attributes: ["insertAttributes"],
-        },
-        {
-          model: insertModel,
-          attributes: ["insertAttributes"],
-        },
-      ],
+    const getMenu = await Menu.findAll({
+      // include: [
+      //   {
+      //     model: Categories,
+      //   },
+      // ],
     });
 
     const makeMenu = getMenu.map((menu) => menu.get({ plain: true }));
-
-    res.render("menu", {
-      makeMenu,
-    });
+    res.status(200).json(makeMenu);
+    // res.render("menu", {
+    //   makeMenu,
+    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -32,28 +27,24 @@ router.get("/", async (req, res) => {
 // GET route for clicked on section of the menu
 router.get("/:id", async (req, res) => {
   try {
-    const getMenuCategory = await insertModel.findByPk(req.params.id, {
+    const getMenuCategory = await Categories.findByPk(req.params.id, {
       include: [
         {
-          model: insertModel,
-          attributes: ["insertAttributes"],
-        },
-        {
-          model: insertModel,
-          attributes: ["insertAttributes"],
+          model: Menu,
         },
       ],
     });
 
-    const makeMenuCategory = getMenuCategory.map((menu) =>
-      menu.get({ plain: true })
-    );
+    const makeMenuCategory = getMenuCategory.get({ plain: true });
 
-    res.render("menu", {
-      makeMenuCategory,
-    });
+    res.status(200).json(makeMenuCategory);
+    // res.render("menu", {
+    //   makeMenuCategory,
+    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
