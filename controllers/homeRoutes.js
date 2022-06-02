@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET route for order status
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
@@ -25,10 +25,11 @@ router.get("/:id", async (req, res) => {
 
     console.log(findOrder);
     const getOrderStatus = findOrder.get({ plain: true });
-    // res.status(200).json(getOrderStatus);
-    res.render("order-summary", {
-      getOrderStatus,
-    });
+    //to check with Insomnia
+    res.status(200).json(getOrderStatus);
+    // res.render("order-summary", {
+    //   getOrderStatus,
+    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -38,7 +39,7 @@ router.get("/:id", async (req, res) => {
 // Sign-Up GET route
 router.get("/sign-up", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/insert page to redirect to");
+    res.redirect("/main-page");
     return;
   }
   res.render("sign-up");

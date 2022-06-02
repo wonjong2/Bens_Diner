@@ -39,7 +39,7 @@ const withAuth = require("../../utils/auth");
 // POST route for order - send the order in and render the order page
 router.post("/order-summary", async (req, res) => {
   try {
-    const newOrder = await insertModel.create({
+    const newOrder = await OrderHistory.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -53,7 +53,7 @@ router.post("/order-summary", async (req, res) => {
 // DELETE route for deleting items from a cart
 router.delete("/order-summary/:id", async (req, res) => {
   try {
-    const deleteOrder = await insertModel.destroy({
+    const deleteOrder = await OrderHistory.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,

@@ -5,12 +5,12 @@ const withAuth = require("../../utils/auth");
 // GET route for menu page
 router.get("/", async (req, res) => {
   try {
-    const getMenu = await Menu.findAll({
-      // include: [
-      //   {
-      //     model: Categories,
-      //   },
-      // ],
+    const getMenu = await Categories.findAll({
+      include: [
+        {
+          model: Menu,
+        },
+      ],
     });
 
     const makeMenu = getMenu.map((menu) => menu.get({ plain: true }));
