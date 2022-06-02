@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Bens Poppin' Poppers",
+    "description": "8 jalapeno poppers packed with a delicious Beecher's three-cheese blend and mini bits of brisket",
+    "price": 7.99,
+    "category_id": 1
+  },
+  {
+    "name": "Bens Whoppin' Whoppers",
+    "description": "4 Mini 'whopper' burgers with our signature whoppin sauce (Totally not stolen from Whataburger)",
+    "price": 9.99,
+    "category_id": 1
+  },
+  {
+    "name": "Frenchin' Frenchies",
+    "description": "They're just french fries... really...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Curly Curlers",
+    "description": "They're just curly fries... really...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Cut Corners",
+    "description": "Because our kitchen staff doesn't know how to cut potato wedges...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Ben's Bus",
+    "description": "Traditional BLT on the world's longest (13-inch) sourdough bread",
+    "price": 8.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Cheese Burger",
+    "description": "Simple 1/4-lb pattie with a slice of Beecher's chedder, giving Dick's a run for it's money.",
+    "price": 3.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Big Burger",
+    "description": "Not simple 1/2-lb pattie with two-slices of Beecher's chedder, our signature whoppin sauce, and a handful of salad greens with a tomato slice",
+    "price": 3.99,
+    "category_id": 3
+  },
+  {
+    "name": "THE CHOCOLATE MOUNTAIN",
+    "description": "Our signature and award winning mountain of chocolate cake topped with a chocolate drizzle",
+    "price": 6.99,
+    "category_id": 4
+  },
+  {
+    "name": "Yo Mama's Cookies",
+    "description": "3 Chocolate Chip cookies, just like yo mama used to make. Milk not included",
+    "price": 3.99,
+    "category_id": 4
+  },
+  {
+    "name": "Coca-Cola",
+    "description": "A single can of Coke",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Yo Mama's Lemonade",
+    "description": "Fresh squeezed lemonade with three tablespoons of sugar. Just like yo mama probably used to make.",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Gin and Tonic",
+    "description": "2oz shot of Bombay Gin and fizzy tonic water and a squeeze of lime for a crisp 8oz refresher",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "NO-BOAT Rando",
+    "description": "Random 8oz pour of rotating tap. Ask your local server for the current keg.",
+    "price": 4.99,
+    "category_id": 7
+  }
+]

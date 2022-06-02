@@ -1,0 +1,30 @@
+[
+  {
+    "first_name": "Vladimir",
+    "last_name": "Berka",
+    "email": "vlad@hotmail.com",
+    "password": "password12345",
+    "phone_number": 5555555555
+  },
+  {
+    "first_name": "Natalie",
+    "last_name": "Bulger",
+    "email": "natalie@hotmail.com",
+    "password": "password12345",
+    "phone_number": 5555555555
+  },
+  {
+    "first_name": "Wonjong",
+    "last_name": "Park",
+    "email": "wonjong@hotmail.com",
+    "password": "password12345",
+    "phone_number": 5555555555
+  },
+  {
+    "first_name": "Courtney",
+    "last_name": "Struelens",
+    "email": "courtney@hotmail.com",
+    "password": "password12345",
+    "phone_number": 5555555555
+  }
+]

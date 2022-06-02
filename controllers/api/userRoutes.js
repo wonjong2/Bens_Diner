@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Menu, OrderHistory, Categories } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //at the /api/user/login either redirect the user or render the login handlebars file
 router.get("/login", async (req, res) => {
   //   If the user is already logged in, redirect the request to the dashboard route
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/api/menu/");
     return;
   }
 
-  res.render("login");
+  res.render("homepage");
 });
 
 // at api/user when the user requests to log in then create a new user and save the information as well as set the logged in variable to true
@@ -59,15 +59,6 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
-  }
-});
-
-//at api/user/logout render the logout handlebars view
-router.get("/logout", (req, res) => {
-  try {
-    res.render("logout");
-  } catch (err) {
-    res.status(404).json(err);
   }
 });
 
