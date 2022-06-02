@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 router.get("/login", async (req, res) => {
   //   If the user is already logged in, redirect the request to the dashboard route
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/main-page");
     return;
   }
 
