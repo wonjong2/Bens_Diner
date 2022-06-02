@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class OrderHistory extends Model {}
 
@@ -25,8 +25,8 @@ OrderHistory.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'user_id',
+        model: "user",
+        key: "user_id",
       },
     },
     // Date of the order, auto generated
@@ -41,7 +41,7 @@ OrderHistory.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'orderHistory',
+    modelName: "orderHistory",
   }
 );
 

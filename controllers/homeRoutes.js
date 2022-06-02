@@ -1,26 +1,11 @@
 const router = require("express").Router();
-const { User, Menu, Order } = require("../models");
+const { User, Menu, OrderHistory, Categories } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET for the homepage
 router.get("/", async (req, res) => {
   try {
-    const insertName = await insertModel.findAll({
-      include: [
-        {
-          model: insertModel,
-          attributes: ["insertAttributes"],
-        },
-      ],
-    });
-
-    const insertname = insertName.map((insertname) =>
-      insertname.get({ plain: true })
-    );
-    res.render("homepage", {
-      insertname,
-      loggedIn: req.session.loggedIn,
-    });
+    res.render("homepage");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -30,16 +15,17 @@ router.get("/", async (req, res) => {
 // GET route for order status
 router.get("/:id", async (req, res) => {
   try {
-    const findOrder = await insertModel.findByPk(req.params.id, {
+    const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
         {
-          model: insertModel,
-          attributes: ["insertAttributes"],
+          model: User,
         },
       ],
     });
 
-    const getOrderStatus = findOrder.map((order) => order.get({ plain: true }));
+    console.log(findOrder);
+    const getOrderStatus = findOrder.get({ plain: true });
+    // res.status(200).json(getOrderStatus);
     res.render("order-summary", {
       getOrderStatus,
     });

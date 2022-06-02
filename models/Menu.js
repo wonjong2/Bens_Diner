@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Menu extends Model {}
 
@@ -30,8 +30,8 @@ Menu.init(
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'categories',
-        key: 'id',
+        model: "categories",
+        key: "id",
       },
     },
   },
@@ -40,7 +40,7 @@ Menu.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'menu',
+    modelName: "menu",
   }
 );
 
