@@ -3,12 +3,13 @@ const { Menu, Order } = require("../models");
 const withAuth = require("../../utils/auth");
 
 // PUT route to update cart - display updated cart
-router.put("/menu/:id", async (req, res) => {
+router.put("/cart/:id", async (req, res) => {
   try {
     console.log(req.body);
     const updateCart = await insertModel.update(req.body, {
       where: {
         id: req.params.id,
+        user_id: req.session.user_id,
       },
     });
     if (!insertName[0]) {
@@ -22,7 +23,7 @@ router.put("/menu/:id", async (req, res) => {
 });
 
 // DELETE route for deleting items from a cart
-router.delete("/menu/:id", async (req, res) => {
+router.delete("/cart/:id", async (req, res) => {
   try {
     const deleteItem = await insertModel.create({
       ...req.body,
@@ -46,5 +47,26 @@ router.post("/order-summary", async (req, res) => {
     res.status(200).json(newOrder);
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+// DELETE route for deleting items from a cart
+router.delete("/order-summary/:id", async (req, res) => {
+  try {
+    const deleteOrder = await insertModel.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!deleteOrder) {
+      res.status(404).json({ message: "No order found with this id!" });
+      return;
+    }
+
+    res.status(200).json(deleteOrder);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });

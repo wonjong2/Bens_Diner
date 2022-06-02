@@ -49,13 +49,22 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Login GET route
-router.get("/login", (req, res) => {
+// Sign-Up GET route
+router.get("/sign-up", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/insert page to redirect to");
     return;
   }
-  res.render("login");
+  res.render("sign-up");
 });
+
+// // Login GET route
+// router.get("/", (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/insert page to redirect to");
+//     return;
+//   }
+//   res.render("homepage");
+// });
 
 module.exports = router;

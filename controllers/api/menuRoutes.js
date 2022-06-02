@@ -3,7 +3,7 @@ const { Menu, Order } = require("../models");
 const withAuth = require("../../utils/auth");
 
 // GET route for menu page
-router.get("/menu", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const getMenu = await insertModel.findAll({
       include: [
@@ -30,7 +30,7 @@ router.get("/menu", async (req, res) => {
 });
 
 // GET route for clicked on section of the menu
-router.get("/menu/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const getMenuCategory = await insertModel.findByPk(req.params.id, {
       include: [
