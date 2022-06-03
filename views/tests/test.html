@@ -43,8 +43,78 @@
                   title=""
                 />
               </div>
-              <div class="col-sm" id="signin">One of three columns</div>
-              <div class="col-sm" id="signup">One of three columns</div>
+
+              <!-- Sign in or sign up -->
+              <div class="col-sm" id="signin">
+                <div class="wrapper">
+                  <div class="title-text">
+                    <div class="title login">Login Form</div>
+                    <div class="title signup">Signup Form</div>
+                  </div>
+                  <div class="form-container">
+                    <div class="slide-controls">
+                      <input type="radio" name="slide" id="login" checked />
+                      <input type="radio" name="slide" id="signup" />
+                      <label for="login" class="slide login">Login</label>
+                      <label for="signup" class="slide signup">Signup</label>
+                      <div class="slider-tab"></div>
+                    </div>
+                    <div class="form-inner">
+                      <form action="#" class="login">
+                        <div class="field">
+                          <input
+                            type="text"
+                            placeholder="Email Address"
+                            required
+                          />
+                        </div>
+                        <div class="field">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            required
+                          />
+                        </div>
+                        <div class="field button">
+                          <div class="button-layer"></div>
+                          <input type="submit" value="Login" />
+                        </div>
+                        <div class="signup-link">
+                          No account? <a href="">Signup now</a>
+                        </div>
+                      </form>
+                      <form action="#" class="signup">
+                        <div class="field">
+                          <input
+                            type="text"
+                            placeholder="Email Address"
+                            required
+                          />
+                        </div>
+                        <div class="field">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            required
+                          />
+                        </div>
+                        <div class="field">
+                          <input
+                            type="password"
+                            placeholder="Confirm password"
+                            required
+                          />
+                        </div>
+                        <div class="field button">
+                          <div class="button-layer"></div>
+                          <input type="submit" value="Signup" />
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" id="orderCheck">One of three columns</div>
             </div>
           </main>
         </div>
@@ -56,5 +126,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js"></script>
   </body>
 </html>
