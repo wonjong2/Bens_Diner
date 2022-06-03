@@ -21,7 +21,7 @@ html {
 }
 
 header h1 {
-  font-size: 6rem;
+  font-size: 6em;
   letter-spacing: -5;
 }
 
@@ -41,6 +41,16 @@ header img {
 #qrCode,
 #signin {
   border-right: solid 1px var(--bone);
+}
+
+#qrCode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrCode img {
+  height: 50%;
 }
 
 /* Main Content */
