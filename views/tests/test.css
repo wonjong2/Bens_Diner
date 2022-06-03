@@ -1,6 +1,7 @@
 :root {
   --red: #b32c06;
   --off-white: #fffaef;
+  --bone: #dad6ca;
 }
 
 html {
@@ -35,11 +36,11 @@ header img {
 }
 /* Header */
 
-body {
-  height: 100vh;
+/* Main Content */
+
+#qrCode,
+#signin {
+  border-right: solid 1px var(--bone);
 }
 
-#qrCode {
-  border-right: solid 1px black;
-}
 /* Main Content */
