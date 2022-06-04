@@ -1,163 +1,131 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ben's Diner</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./test.css" />
-  </head>
 
-  <body>
-    <div class="container-fluid h-100">
-      <div class="h-100 d-flex flex-column">
-        <div class="row">
-          <header class="">
-            <!-- Jumbotron -->
-            <div class="row bg_img">
-              <div class="col-md-8 col-xs-12">
-                <div class="header_text p-2">
-                  <h1 class="mb-3">Ben's Diner</h1>
-                  <h4 class="mb-3">Food for the foodie</h4>
-                </div>
-              </div>
-              <div class="col-md-4 col-xs-12" id="header_img_container">
-                <div class="header_img">
-                  <img src="./assets/burger_img.jpg" alt="image of a burger" />
-                </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben's Diner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./test.css" />
+</head>
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="h-100 d-flex flex-column">
+      <div class="row">
+        <header class="">
+          <!-- Jumbotron -->
+          <div class="row bg_img">
+            <div class="col-md-8 col-xs-12">
+              <div class="header_text p-2">
+                <h1 class="mb-3">Ben's Diner</h1>
+                <h4 class="mb-3">Food for the foodie</h4>
               </div>
             </div>
-            <!-- Jumbotron -->
-          </header>
-        </div>
-
-        <div class="row pt-5 flex-grow-1">
-          <main>
-            <div class="row h-100" id="mainContent">
-              <!-- QR Code -->
-              <div class="col-md" id="qrCode">
-                <!-- NEED TO PUT IN DATA -->
-                <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?data=<DATA_GOES_HERE>&amp;size=100x100"
-                  alt=""
-                  title=""
-                />
+            <div class="col-md-4 col-xs-12" id="header_img_container">
+              <div class="header_img">
+                <img src="./assets/burger_img.jpg" alt="image of a burger" />
               </div>
-              <!-- QR Code -->
+            </div>
+          </div>
+          <!-- Jumbotron -->
+        </header>
+      </div>
 
-              <!-- Sign in or sign up -->
-              <div class="col-md" id="signin">
-                <div class="wrapper">
-                  <div class="title-text">
-                    <div class="title login">Login Form</div>
-                    <div class="title signup">Signup Form</div>
-                  </div>
-                  <div class="form-container">
-                    <div class="slide-controls">
-                      <input type="radio" name="slide" id="login" checked />
-                      <input type="radio" name="slide" id="signup" />
-                      <label for="login" class="slide login">Login</label>
-                      <label for="signup" class="slide signup">Signup</label>
-                      <div class="slider-tab"></div>
-                    </div>
-                    <div class="form-inner">
-                      <form action="#" class="login">
-                        <div class="field">
-                          <input
-                            type="text"
-                            placeholder="Email Address"
-                            required
-                          />
-                        </div>
-                        <div class="field">
-                          <input
-                            type="password"
-                            placeholder="Password"
-                            required
-                          />
-                        </div>
-                        <div class="field button">
-                          <div class="button-layer"></div>
-                          <input type="submit" value="Login" />
-                        </div>
-                        <div class="signup-link">
-                          No account? <a href="">Signup now</a>
-                        </div>
-                      </form>
-                      <form action="#" class="signup">
-                        <div class="field">
-                          <input
-                            type="text"
-                            placeholder="Email Address"
-                            required
-                          />
-                        </div>
-                        <div class="field">
-                          <input
-                            type="password"
-                            placeholder="Password"
-                            required
-                          />
-                        </div>
-                        <div class="field">
-                          <input
-                            type="password"
-                            placeholder="Confirm password"
-                            required
-                          />
-                        </div>
-                        <div class="field button">
-                          <div class="button-layer"></div>
-                          <input type="submit" value="Signup" />
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+      <div class="row pt-5 flex-grow-1">
+        <main>
+          <div class="row h-100" id="mainContent">
+            <!-- QR Code -->
+            <div class="col-md" id="qrCode">
+              <!-- NEED TO PUT IN DATA -->
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=<DATA_GOES_HERE>&amp;size=100x100" alt=""
+                title="" />
+            </div>
+
+            <!-- Sign in or sign up -->
+            <div class="col-md" id="signin">
+              <div class="wrapper">
+                <div class="title-text">
+                  <div class="title login">Login Form</div>
+                  <div class="title signup">Signup Form</div>
                 </div>
-              </div>
-              <!-- Sign in or sign up -->
-
-              <!-- Order check column -->
-              <div class="col-md col-ex" id="orderCheck">
-                <div class="wrapper">
-                  <div class="title-text">
-                    <div class="title login">Check Order Status</div>
+                <div class="form-container">
+                  <div class="slide-controls">
+                    <input type="radio" name="slide" id="login" checked />
+                    <input type="radio" name="slide" id="signup" />
+                    <label for="login" class="slide login">Login</label>
+                    <label for="signup" class="slide signup">Signup</label>
+                    <div class="slider-tab"></div>
                   </div>
-                  <div class="form-container">
-                    <div class="form-inner">
-                      <form action="#" class="login">
-                        <div class="field">
-                          <input
-                            type="text"
-                            placeholder="Order Number"
-                            required
-                          />
-                        </div>
-                        <div class="field button">
-                          <div class="button-layer"></div>
-                          <input type="submit" value="Check Status" />
-                        </div>
-                      </form>
-                    </div>
+                  <div class="form-inner">
+                    <form action="#" class="login">
+                      <div class="field">
+                        <input type="text" placeholder="Email Address" required id="login-email" />
+                      </div>
+                      <div class="field">
+                        <input type="password" placeholder="Password" required id="login-pwd" />
+                      </div>
+                      <div class="field button">
+                        <div class="button-layer"></div>
+                        <input type="submit" value="Login" id="login-btn" />
+                      </div>
+                      <div class="signup-link">
+                        No account? <a href="">Signup now</a>
+                      </div>
+                    </form>
+                    <form action="#" class="signup">
+                      <div class="field">
+                        <input type="text" placeholder="Email Address" required id="signup-email" />
+                      </div>
+                      <div class="field">
+                        <input type="password" placeholder="Password" required id="signup-pwd" />
+                      </div>
+                      <div class="field">
+                        <input type="password" placeholder="Confirm password" required id="signup-cnfPwd" />
+                      </div>
+                      <div class="field button">
+                        <div class="button-layer"></div>
+                        <input type="submit" value="Signup" id="signup-btn" />
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
               <!-- Order check column -->
             </div>
-          </main>
-        </div>
+
+            <!-- Order check column -->
+            <div class="col-md col-ex" id="orderCheck">
+              <div class="wrapper">
+                <div class="title-text">
+                  <div class="title login">Check Order Status</div>
+                </div>
+                <div class="form-container">
+                  <div class="form-inner">
+                    <form action="#" class="login">
+                      <div class="field">
+                        <input type="text" placeholder="Order Number" required id="order-num" />
+                      </div>
+                      <div class="field button">
+                        <div class="button-layer"></div>
+                        <input type="submit" value="Check Status" id="check-order-btn" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./script.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+  <script src='../../public/js/landing.js'></script>
+</body>
+
 </html>
