@@ -5,7 +5,8 @@ const withAuth = require("../../utils/auth");
 // GET route for menu page
 router.get("/", async (req, res) => {
   try {
-    const getMenu = await Categories.findAll({
+    //search on default menu category "Ben's Booze" --> id = 6
+    const getMenu = await Categories.findByPk(6, {
       include: [
         {
           model: Menu,
@@ -13,7 +14,9 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const makeMenu = getMenu.map((menu) => menu.get({ plain: true }));
+    const makeMenu = getMenu.get({ plain: true });
+    //get the entire menu if we want it
+    // const makeMenu = getMenu.map((menu) => menu.get({ plain: true }));
     res.status(200).json(makeMenu);
     // res.render("menu", {
     //   makeMenu,

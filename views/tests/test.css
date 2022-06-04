@@ -290,3 +290,8 @@ form .button input[type="submit"] {
 form .button:active {
   transform: translateY(-1px);
 }
+
+.order-summary {
+  display: flex;
+  justify-content: center;
+}
