@@ -3,14 +3,14 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
 
     // Collect values from the login form
-    const user_email = document.querySelector("#login-email").value.trim();
-    const password = document.querySelector("#login-pwd").value.trim();
+    const email = document.querySelector("#login-email").value.trim();
+    const password = document.querySelector("#login-password").value.trim();
 
-    if (user_email && password) {
+    if (email && password) {
         // Send a POST request to the API endpoint
         const response = await fetch("/api/users/login", {
             method: "POST",
-            body: JSON.stringify({ user_email, password }),
+            body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
         });
 
@@ -37,30 +37,24 @@ const signupFormHandler = async (event) => {
 
     event.preventDefault();
 
-    const user_firstName = document.querySelector("#signup-fname").value.trim();
-    const user_lastName = document.querySelector("#signup-lname").value.trim();
-    const user_email = document.querySelector("#signup-email").value.trim();
-    const user_phone = document.querySelector("#signup-phone").value.trim();
+    const first_name = document.querySelector("#signup-fname").value.trim();
+    const last_name = document.querySelector("#signup-lname").value.trim();
+    const email = document.querySelector("#signup-email").value.trim();
+    const phone_number = document.querySelector("#signup-phone").value.trim();
     const password = document.querySelector("#signup-password").value.trim();
     const confirmPassword = document
         .querySelector("#signup-confirmPassword")
         .value.trim();
 
     if (password === confirmPassword) {
-        if (
-            user_firstName &&
-            user_lastName &&
-            user_email &&
-            user_phone &&
-            password
-        ) {
+        if (first_name && last_name && email && phone_number && password) {
             const response = await fetch("/api/users", {
                 method: "POST",
                 body: JSON.stringify({
-                    user_firstName,
-                    user_lastName,
-                    user_email,
-                    user_phone,
+                    first_name,
+                    last_name,
+                    email,
+                    phone_number,
                     password,
                 }),
                 headers: { "Content-Type": "application/json" },
