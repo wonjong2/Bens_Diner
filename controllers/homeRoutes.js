@@ -26,10 +26,10 @@ router.get("/:id", async (req, res) => {
     console.log(findOrder);
     const getOrderStatus = findOrder.get({ plain: true });
     //to check with Insomnia
-    res.status(200).json(getOrderStatus);
-    // res.render("order-summary", {
-    //   getOrderStatus,
-    // });
+    // res.status(200).json(getOrderStatus);
+    res.render("order-summary", {
+      getOrderStatus,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
