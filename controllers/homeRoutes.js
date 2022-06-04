@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET route for order status (will need withAuth)
+// GET route for order status (will need withAuth), ID is order number
 router.get("/:id", async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
@@ -23,13 +23,16 @@ router.get("/:id", async (req, res) => {
       ],
     });
 
-    console.log(findOrder);
+    // console.log(findOrder);
+    console.log("Findorder is:", findOrder);
     const getOrderStatus = findOrder.get({ plain: true });
+    console.log("getOrderStatus is:", getOrderStatus);
     //to check with Insomnia
     // res.status(200).json(getOrderStatus);
     res.render("order-summary", {
       getOrderStatus,
     });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
