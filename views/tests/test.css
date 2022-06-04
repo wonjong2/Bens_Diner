@@ -1,17 +1,13 @@
 :root {
-  --red: #b32c06;
+  --red: #db4439;
   --off-white: #fffaef;
   --bone: #dad6ca;
   --green-sheen: #86b8b1;
 }
 
-body {
-  font-size: 16px;
-}
-
 /* Header */
 .bg_img {
-  height: 350px;
+  height: fit-content;
   background-color: var(--red);
 }
 
@@ -23,21 +19,27 @@ body {
 
 header h1 {
   font-size: 7vw;
-  letter-spacing: -10;
+  /* letter-spacing: -10; */
 }
 
 header h4 {
   font-size: 5vw;
-  letter-spacing: -6;
+  /* letter-spacing: -6; */
 }
 
 header img {
-  height: 120%;
-  transform: rotate(10deg);
+  width: 80%;
+  height: auto;
+  transform: rotate(7deg);
 }
+
 /* Header */
 
 /* Main Content */
+
+body {
+  font-size: 16px;
+}
 
 #qrCode,
 #signin {
@@ -51,18 +53,40 @@ header img {
 }
 
 #qrCode img {
-  height: 50%;
+  min-height: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  #qrCode img {
+    height: 40vw;
+  }
+
+  header img,
+  #header_img_container {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 16vw;
+    letter-spacing: -5px;
+  }
+
+  header h4 {
+    font-size: 8vw;
+    letter-spacing: -2px;
+  }
+}
+
+#signin,
+#orderCheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Main Content */
 
 /* sign in or sign up */
-
-#signin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .wrapper {
   overflow: hidden;
