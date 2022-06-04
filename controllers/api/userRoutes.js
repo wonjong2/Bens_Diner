@@ -4,13 +4,13 @@ const withAuth = require("../../utils/auth");
 
 //at the /api/user/login either redirect the user or render the login handlebars file
 router.get("/login", async (req, res) => {
-  //   If the user is already logged in, redirect the request to the dashboard route
+  //   If the user is already logged in, redirect the request to the menu route
   if (req.session.logged_in) {
     res.redirect("/api/menu/");
     return;
   }
 
-  res.render("homepage");
+  res.render("landing-page");
 });
 
 // at api/user when the user requests to log in then create a new user and save the information as well as set the logged in variable to true
