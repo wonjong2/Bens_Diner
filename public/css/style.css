@@ -54,7 +54,7 @@ body {
 
 #qrCode img {
   padding: 30px;
-  max-height: 50%;
+  height: 50%;
 }
 
 #orderCheck {
@@ -79,11 +79,13 @@ body {
   padding: 30px;
 }
 
+#qrCode .title-text,
 .wrapper .title-text {
   display: flex;
   width: 200%;
 }
 
+#qrCode .title,
 .wrapper .title {
   width: 50%;
   font-size: 35px;
