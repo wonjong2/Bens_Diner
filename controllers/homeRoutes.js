@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET route for order status (will need withAuth)
-router.get("/:id", async (req, res) => {
+router.get("/orderhistory/:id", async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
