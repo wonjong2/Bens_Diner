@@ -18,8 +18,10 @@
                   <p class="card-text">{{format_date getOrderStatus.date_created}}</p>
                 </div>
                 <ul class="list-group list-group-flush">
+
                     {{#each menu_list as |item|}}
                   <li class="list-group-item">{{item.name}}</li>
+
                   {{/each}}
                 </ul>
                 <div class="card-body">
