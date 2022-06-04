@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben's Diner</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+  <body>
+    <div class="container-fluid h-100">
+      <div class="h-100 d-flex flex-column">
+        <div class="row summary-header-container">
+          <nav class="navbar order-summary-header justify-content-between">
+            <a class="navbar-brand summary-header-text">Order Summary</a>
+            <p class="diner-header">Ben's Diner <sup class="tm-icon"><img class="user-icon" src="./assets/images/placeholder-image.png"></sup></p>
+            <form class="form-inline">
+                <p class="username">First & Last Name <img class="user-icon" src="./assets/images/placeholder-image.png"></p>
+              <a class="logout-button" type="submit">Logout</a>
+            </form>
+          </nav>
+          <div class="order-summary-container">
+            <div class="card order-summary" style="width: 18rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Order Number #1</h4>
+                  <p class="card-text">First & Last Name</p>
+                  <p class="card-text">Date-Created</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Food item #1</li>
+                  <li class="list-group-item">Food item #2</li>
+                  <li class="list-group-item">Food item #3</li>
+                  <li class="list-group-item">Food item #4</li>
+                </ul>
+                <div class="card-body">
+                    <h6 class="card-title">Estimated Time Remaining</h6>
+                    <p class="card-text">05:01</p>
+                  </div>
+                <div class="card-body">
+                  <a href="#" class="card-link summary-buttons"><button class="sum-button">New Order</button></a>
+                  <a href="#" class="card-link summary-buttons"><button class="sum-button">Cancel Order</button></a>
+                  <a href="#" class="card-link summary-buttons"><button class="sum-button">Return Home</button></a>
+                </div>
+          </div>
+          
+          </div>
+        </div>
+
