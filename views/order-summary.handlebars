@@ -1,0 +1,37 @@
+  <body>
+    <div class="container-fluid h-100">
+      <div class="h-100 d-flex flex-column">
+        <div class="row summary-header-container">
+          <nav class="navbar order-summary-header justify-content-between">
+            <a class="navbar-brand summary-header-text">Order Summary</a>
+            <p class="diner-header">Ben's Diner <sup class="tm-icon"><img class="user-icon" src="./assets/images/placeholder-image.png"></sup></p>
+            <form class="form-inline">
+                <p class="username">{{getOrderStatus.user.first_name}} {{getOrderStatus.user.last_name}} <img class="user-icon" src="./assets/images/placeholder-image.png"></p>
+              <a class="logout-button" type="submit">Logout</a>
+            </form>
+          </nav>
+          <div class="order-summary-container">
+            <div class="card order-summary" style="width: 18rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Order Number #{{getOrderStatus.id}}</h4>
+                  <p class="card-text">{{getOrderStatus.user.first_name}} {{getOrderStatus.user.last_name}}</p>
+                  <p class="card-text">{{format_date getOrderStatus.date_created}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {{#each getOrderStatus.item_list as |item_list|}}
+                  <li class="list-group-item">{{item_list}}</li>
+                  {{/each}}
+                </ul>
+                <div class="card-body">
+                    <h6 class="card-title">Estimated Time Remaining</h6>
+                    <p class="card-text">05:01</p>
+                  </div>
+                <div class="card-body">
+                  <a href="/main-page" class="card-link summary-buttons"><button class="sum-button">New Order</button></a>
+                  <a href="/cancel" class="card-link summary-buttons"><button class="sum-button">Cancel Order</button></a>
+                  <a href="/" class="card-link summary-buttons"><button class="sum-button">Return Home</button></a>
+                </div>
+      </div>
+    </div>
+  </div>
+</body>
