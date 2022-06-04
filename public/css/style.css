@@ -49,18 +49,21 @@ body {
 #qrCode {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  padding-top: 30px;
 }
 
 #qrCode img {
+  height: 40%;
+}
+
+#qrCodeContainer {
+  max-width: 390px;
   padding: 30px;
-  height: 50%;
 }
 
 #orderCheck {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 #signin {
@@ -305,25 +308,18 @@ form .button:active {
 
 /* media responsiveness */
 
-
-
-
-  /* Order Summary CSS */
-  body {
-    background-color: var(--off-white);
-}
-
+/* Order Summary CSS */
 .order-summary-header {
-    background-color: var(--green-sheen);
+  background-color: var(--green-sheen);
 }
 
 .summary-header-text {
-    font-size: 36px;
-    padding-left: 10px;
+  font-size: 36px;
+  padding-left: 10px;
 }
 
 .form-inline {
-    padding: 10px;
+  padding: 10px;
 }
 
 .order-summary {
@@ -334,11 +330,11 @@ form .button:active {
 }
 
 .order-summary-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .summary-buttons {
@@ -364,22 +360,22 @@ form .button:active {
 }
 
 .logout-button {
-    background-color: none;
-    border: none;
-    color: black;
-    position: relative;
-    top: -30px;
+  background-color: none;
+  border: none;
+  color: black;
+  position: relative;
+  top: -30px;
 }
 
 .logout-button:hover {
   background-color: none;
   border: none;
   color: var(--red);
-  }
+}
 
-  .diner-header {
-      font-size: 56px;
-      padding-right: 60px;
-  }
+.diner-header {
+  font-size: 56px;
+  padding-right: 60px;
+}
 
-    /* Order Summary CSS */
+/* Order Summary CSS */
