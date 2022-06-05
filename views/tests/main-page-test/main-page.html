@@ -9,15 +9,23 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./main-page.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <nav></nav>
-
     <main>
       <div class="row">
-        <section class="col-sm-8">
+        <section class="col-sm-9">
+          <!-- nav bar -->
+          <nav class="navbar order-summary-header justify-content-between">
+            <h1 class="px-2">Ben's Diner</h1>
+            <div>
+              <p class="username d-inline px-2">Courtney</p>
+              <a class="logout-button d-inline px-2" type="submit">Logout</a>
+            </div>
+          </nav>
+          <!-- nav bar -->
+
           <!-- menu -->
           <div class="container bcontent">
             <div class="card" style="width: 500px">
@@ -41,7 +49,23 @@
           <!-- menu -->
         </section>
 
-        <aside class="col-sm-4">order items</aside>
+        <!-- cart -->
+        <aside class="col-sm-3">
+          <div class="py-5">
+            <div id="cart-header">
+              <h4 class="header_text">Cart</h4>
+            </div>
+
+            <div id="cart-items">
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <!-- cart -->
       </div>
     </main>
   </body>
