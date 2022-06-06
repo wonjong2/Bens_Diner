@@ -18,7 +18,12 @@ const loginFormHandler = async (event) => {
             // If successful, redirect the browser to the main page
             document.location.replace("/api/menu");
         } else {
-            alert(response.statusText);
+            const text = await response.json();
+            if (text.message) {
+                alert(text.message);
+            } else {
+                alert(response.statusText);
+            }
         }
     }
 };
@@ -31,10 +36,6 @@ const loginFormHandler = async (event) => {
 
 // Event handler for the 'Signup' button
 const signupFormHandler = async (event) => {
-    ///////////////////////////////////////////////////////////////////
-    // Need to add the code to compare passwords entered by the user
-    ///////////////////////////////////////////////////////////////////
-
     event.preventDefault();
 
     const first_name = document.querySelector("#signup-fname").value.trim();
