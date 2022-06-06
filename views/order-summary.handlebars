@@ -1,74 +1,82 @@
 <div class="container-fluid h-100">
-  <div class="h-100 d-flex flex-column">
-    <div class="row">
-      <div class="summary-header-container">
-        <nav class="row navbar order-summary-header">
-          <div class="col-sm">
-            <p class="summary-header-text">Order Summary</p>
-          </div>
+    <div class="h-100 d-flex flex-column">
+        <div class="row">
+            <div class="summary-header-container">
+                <nav class="row navbar order-summary-header">
+                    <div class="col-sm">
+                        <p class="summary-header-text">Order Summary</p>
+                    </div>
 
-          <div class="col-sm text-center">
-            <p class="diner-header">
-              Ben's Diner
-            </p>
-          </div>
+                    <div class="col-sm text-center">
+                        <p class="diner-header">
+                            Ben's Diner
+                        </p>
+                    </div>
 
-          <div class="col-sm">
-            <form
-              class="form-inline d-flex justify-content-end align-items-center"
+                    <div class="col-sm">
+                        <form
+                            class="form-inline d-flex justify-content-end align-items-center"
+                        >
+                            <p class="username d-inline px-2 m-0">
+                                {{getOrderStatus.user.first_name}}
+                                {{getOrderStatus.user.last_name}}
+                            </p>
+                            <a
+                                class="logout-button d-inline px-2"
+                                type="submit"
+                            >Logout</a>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+            <div
+                class="order-summary-container"
+                data-id="{{getOrderStatus.id}}"
             >
-              <p class="username d-inline px-2 m-0">
-                {{getOrderStatus.user.first_name}}
-                {{getOrderStatus.user.last_name}}
-              </p>
-              <a class="logout-button d-inline px-2" type="submit">Logout</a>
-            </form>
-          </div>
-        </nav>
-      </div>
+                <div class="card order-summary" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Order Number #{{getOrderStatus.id}}</h4>
+                        <p class="card-text">
+                            {{getOrderStatus.user.first_name}}
+                            {{getOrderStatus.user.last_name}}
+                        </p>
+                        <p class="card-text">
+                            {{format_date getOrderStatus.date_created}}
+                        </p>
+                    </div>
 
-      <div class="order-summary-container">
-        <div class="card order-summary" style="width: 18rem;">
-          <div class="card-body">
-            <h4 class="card-title">Order Number #{{getOrderStatus.id}}</h4>
-            <p class="card-text">
-              {{getOrderStatus.user.first_name}}
-              {{getOrderStatus.user.last_name}}
-            </p>
-            <p class="card-text">
-              {{format_date getOrderStatus.date_created}}
-            </p>
-          </div>
+                    <ul class="list-group list-group-flush">
+                        {{#each menu_list as |item|}}
+                            <li class="list-group-item">{{item.name}}</li>
+                        {{/each}}
+                    </ul>
 
-          <ul class="list-group list-group-flush">
-            {{#each menu_list as |item|}}
-              <li class="list-group-item">{{item.name}}</li>
-            {{/each}}
-          </ul>
+                    <div class="card-body">
+                        <h6 class="card-title">Estimated Time Remaining</h6>
+                        <p class="card-text">05:01</p>
+                    </div>
 
-          <div class="card-body">
-            <h6 class="card-title">Estimated Time Remaining</h6>
-            <p class="card-text">05:01</p>
-          </div>
+                    <div class="card-body w-100">
+                        <div class="field button my-1">
+                            <div class="button-layer"></div>
+                            <button><a href="/main-page">New Order</a></button>
+                        </div>
 
-          <div class="card-body w-100">
-            <div class="field button my-1">
-              <div class="button-layer"></div>
-              <button><a href="/main-page">New Order</a></button>
+                        <div class="field button my-1">
+                            <div class="button-layer"></div>
+                            <button id="cancel-btn"><a href="/cancel">Cancel
+                                    Order</a></button>
+                        </div>
+
+                        <div class="field button my-1">
+                            <div class="button-layer"></div>
+                            <button><a href="/">Return Home</a></button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="field button my-1">
-              <div class="button-layer"></div>
-              <button><a href="/cancel">Cancel Order</a></button>
-            </div>
-
-            <div class="field button my-1">
-              <div class="button-layer"></div>
-              <button><a href="/">Return Home</a></button>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
+<script src="/js/order.js"></script>
