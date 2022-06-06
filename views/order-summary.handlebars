@@ -13,7 +13,7 @@
           <div class="order-summary-container">
             <div class="card order-summary" style="width: 18rem;">
                 <div class="card-body">
-                  <h4 class="card-title">Order Number #{{getOrderStatus.id}}</h4>
+                  <h4 class="card-title" data-id="{{getOrderStatus.id}}">Order Number #{{getOrderStatus.id}}</h4>
                   <p class="card-text">{{getOrderStatus.user.first_name}} {{getOrderStatus.user.last_name}}</p>
                   <p class="card-text">{{format_date getOrderStatus.date_created}}</p>
                 </div>
@@ -28,10 +28,11 @@
                   </div>
                 <div class="card-body">
                   <a href="/main-page" class="card-link summary-buttons"><button class="sum-button">New Order</button></a>
-                  <a href="/cancel" class="card-link summary-buttons"><button class="sum-button">Cancel Order</button></a>
+                  <a href="/cancel" class="card-link summary-buttons"><button class="sum-button" id="cancel-btn">Cancel Order</button></a>
                   <a href="/" class="card-link summary-buttons"><button class="sum-button">Return Home</button></a>
                 </div>
       </div>
     </div>
   </div>
+  <script src='/js/order.js'></script>
 </body>
