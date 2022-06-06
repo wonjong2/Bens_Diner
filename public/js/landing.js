@@ -79,8 +79,7 @@ const viewStatusHandler = async (event) => {
     const orderNumber = document.querySelector("#order-number").value.trim();
 
     if (orderNumber) {
-        // document.location.assign(`/${orderNumber}`);
-        document.location.assign(`/1`);
+        document.location.assign(`/orderhistory/${orderNumber}`);
     }
 };
 
