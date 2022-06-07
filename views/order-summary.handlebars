@@ -14,9 +14,7 @@
           </div>
 
           <div class="col-sm">
-            <form
-              class="form-inline d-flex justify-content-end align-items-center"
-            >
+            <form class="form-inline d-flex justify-content-end align-items-center">
               <p class="username d-inline px-2 m-0">
                 {{getOrderStatus.user.first_name}}
                 {{getOrderStatus.user.last_name}}
@@ -42,14 +40,14 @@
 
           <ul class="list-group list-group-flush">
             {{#each menu_list as |item|}}
-              <li class="list-group-item">#{{item.id}}. {{item.name}}</li>
+            <li class="list-group-item">#{{item.id}}. {{item.name}}</li>
             {{/each}}
           </ul>
 
           <div class="card-body">
             <h6 class="card-title">Estimated Time Remaining</h6>
             <p class="card-text countdown_timer">{{format_time_remaining
-                getOrderStatus.date_created
+              getOrderStatus.date_created
               }}</p>
             <p class="card-text countdown_timer">00:00</p>
           </div>
@@ -80,3 +78,4 @@
   </div>
 </div>
 <script src="/js/order.js"></script>
+<script src='/js/logout.js'></script>

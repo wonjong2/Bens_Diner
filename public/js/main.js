@@ -1,5 +1,4 @@
 const menuEls = document.querySelectorAll(".menu-card");
-// const deleteEls = document.querySelectorAll(".deleteBlog");
 
 // Variable to have the latest cart menu, Array of menu objects
 let cartMenu = [];
@@ -57,6 +56,7 @@ const renderCart = () => {
     }
 
     for (let i = 0; i < cartMenu.length; i++) {
+        // Create all elements for the cart menu
         let menu = document.createElement("li");
         menu.innerHTML = `              <div class="d-flex justify-content-between">
         <p class="d-inline">${cartMenu[i].name}</p>
@@ -70,6 +70,7 @@ const renderCart = () => {
       </div>`;
         cartEl.appendChild(menu);
         console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
+        // Calculate the total price for the cart menu
         totalPrice += cartMenu[i].price * cartMenu[i].qty;
     }
     const totPriceEl = document.querySelector("#total-price");
@@ -86,7 +87,6 @@ const renderCart = () => {
 const selectMenuHandler = (event) => {
     const id = event.currentTarget.id;
     const name = event.currentTarget.querySelector("h5.card-title").textContent;
-
     const price = event.currentTarget.querySelector("p.card-text").textContent;
 
     const menu = {
@@ -102,7 +102,6 @@ const selectMenuHandler = (event) => {
 
 // Event handler for deletion from the cart menus
 const deleteMenuHandler = (event) => {
-    // DELETE ("api/order/cart/:id") - delete an item in the cart Trash can next to item in cart
     const index = event.currentTarget.dataset.index;
     deleteMenuFromCart(index);
     renderCart();
@@ -130,7 +129,9 @@ const submitOrderHandler = async (event) => {
     });
     if (response.ok) {
         delAllMenuFromCart();
-        document.location.replace("/");
+        const body = await response.json();
+        document.location.replace(`/orderhistory/${body.id}`);
+        //document.location.replace("/");
     } else {
         alert(response.statusText);
     }
