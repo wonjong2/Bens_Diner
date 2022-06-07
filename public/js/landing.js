@@ -49,7 +49,7 @@ const signupFormHandler = async (event) => {
 
   if (password === confirmPassword) {
     if (first_name && last_name && email && phone_number && password) {
-      const response = await fetch("/api/users", {
+      const response = await fetch("/api/users/", {
         method: "POST",
         body: JSON.stringify({
           first_name,
