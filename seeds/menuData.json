@@ -1,0 +1,267 @@
+[
+  {
+    "name": "Ben's Poppin' Poppers",
+    "description": "8 jalapeno poppers packed with a delicious Beecher's three-cheese blend and mini bits of brisket",
+    "price": 7.99,
+    "category_id": 1
+  },
+  {
+    "name": "Ben's Whoppin' Whoppers",
+    "description": "4 Mini 'whopper' burgers with our signature whoppin sauce (Totally not stolen from Whataburger)",
+    "price": 9.99,
+    "category_id": 1
+  },
+  {
+    "name": "Mac Mmmm Cheese",
+    "description": "4 oz Cup of classic macaroni with Beechers cheese, topped with bacon",
+    "price": 4.99,
+    "category_id": 1
+  },
+  {
+    "name": "Deep Fried Prickly Pickles",
+    "description": "Spicy german pickles, breaded and fried. Whoppin' sauce, Horseradish mustard, BBQ sauce, and house made ketchup dippin' sauces",
+    "price": 4.99,
+    "category_id": 1
+  },
+  {
+    "name": "Cha-cha chicken",
+    "description": "Chicken mini-bites tossed in a sriracha aioli",
+    "price": 5.99,
+    "category_id": 1
+  },
+  {
+    "name": "Mini Chicken Tendies",
+    "description": "Chicken tenders made in kid sized bites, for the kid in all of us",
+    "price": 5.99,
+    "category_id": 1
+  },
+  {
+    "name": "Pumpin' Poutine",
+    "description": "Get pumped for Ben's twist on a Canadian classic: Beechers cheese curds and a spicy gravy over house seasoned fries",
+    "price": 9.99,
+    "category_id": 1
+  },
+  {
+    "name": "Cut Corners",
+    "description": "Because our kitchen staff doesn't know how to cut potato wedges...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Frenchin' Frenchies",
+    "description": "They're just salted / seasoned french fries... really...",
+    "price": 4.99,
+    "category_id": 2
+  },
+
+  {
+    "name": "Curly Curlers",
+    "description": "They're just salted / seasoned curly fries... really...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Oh My Onions",
+    "description": "They're just salted / seasoned onion rings... really...",
+    "price": 4.99,
+    "category_id": 2
+  },
+  {
+    "name": "Ben's Bustlin' Bacon Bowl",
+    "description": "Just bacon... in a bowl... a side of bacon... seasoned / candied on request",
+    "price": 3.99,
+    "category_id": 2
+  },
+  {
+    "name": "The Momma Hen",
+    "description": "Chicken burger, grilled or breaded, our signature whoppin' sauce, and a handful salad greens and a prickly pickles",
+    "price": 9.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's BLT Bus",
+    "description": "Traditional BLT on the world's longest (13-inch) sourdough bread",
+    "price": 8.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Cheese Burger",
+    "description": "Simple 1/4-lb pattie with a slice of Beecher's chedder, giving Dick's a run for it's money.",
+    "price": 3.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Big Burger",
+    "description": "Not simple 1/2-lb pattie with two-slices of Beecher's chedder, our signature whoppin' sauce, and a handful of salad greens and tomato slices",
+    "price": 6.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Bigger Burger",
+    "description": "Complex two-1/2-lb patties with FOUR-slices of Beecher's chedder, our signature whoppin' sauce, and a handful of salad greens and tomato slices.",
+    "price": 9.99,
+    "category_id": 3
+  },
+  {
+    "name": "Ben's Biggest Burger",
+    "description": "Cut down the middle, as it feeds two. Monumental three-1/2-lb patties with SIX-slices of Beecher's chedder, our signature whoppin' sauce, and a handful of salad greens and tomato slices.",
+    "price": 14.99,
+    "category_id": 3
+  },
+  {
+    "name": "THE CHOCOLATE MOUNTAIN",
+    "description": "Our signature and award winning mountain of chocolate cake topped with a chocolate drizzle and bits of chocolate bar",
+    "price": 6.99,
+    "category_id": 4
+  },
+  {
+    "name": "Yo Mama's Cookies",
+    "description": "3 Chocolate Chip cookies, just like yo mama used to make. Milk not included",
+    "price": 3.99,
+    "category_id": 4
+  },
+  {
+    "name": "Sunny Sundae",
+    "description": "SUNDAYS ONLY. Three mega scoops of vanilla bean ice cream covered in a warm chocolate drizzle, and bits of chocolate",
+    "price": 6.99,
+    "category_id": 4
+  },
+  {
+    "name": "Limey Lemonade",
+    "description": "Fresh squeezed lemonade and lime juice with three tablespoons of sugar",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Lavender Lemonade",
+    "description": "Fresh squeezed lemonade and lavender garnish with three tablespoons of sugar",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Lowly Lemonade",
+    "description": "Fresh squeezed lemonade and lavender garnish with NO sugar",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Southern Smilin' Sweet Tea",
+    "description": "Southern style sweet tea, overly sweet",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Just Iced Tea",
+    "description": "For the tea lovers, that don't like sugar",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Coca-Cola",
+    "description": "A single can of Coke",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Sprite",
+    "description": "A single can of Sprite",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Dr. Pepper",
+    "description": "A single can of Dr. Pepper",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "San Pelegrino (Blood Orange)",
+    "description": "A single can of blood orange San Pelegrino",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Topo Chico",
+    "description": "A single bottle of topo chico mineral water",
+    "price": 1.99,
+    "category_id": 5
+  },
+  {
+    "name": "Harvey Wallbanger",
+    "description": "2oz shot of Vodka, Galliano, Orange juice",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "Gin and Tonic",
+    "description": "2oz shot of Bombay Gin and fizzy tonic water and a squeeze of lime",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "House Horror",
+    "description": "College style counter wash and jungle juice",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "Blue Lagoon",
+    "description": "2oz Curacao, 1oz Vodka, and our Limey Lemonade",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "Mojito",
+    "description": "2oz White Rum, soda water, sprig o' mint, sugar, and lime juice",
+    "price": 5.99,
+    "category_id": 6
+  },
+  {
+    "name": "NO-BOAT Brewing Rando",
+    "description": "Random 8oz pour of a rotating tap from No-Boat Brewing. Ask your server for the current keg.",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "ELYSIAN Brewing Rando",
+    "description": "Random 8oz pour of a rotating tap from Elysian Brewing. Ask your server for the current keg.",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "FREMONT Brewing Rando",
+    "description": "Random 8oz pour of a rotating tap from Fremont Brewing. Ask your server for the current keg.",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "Good things come in threes",
+    "description": "Optimism Brewing, Triple IPA. 12.0%",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "Bereka",
+    "description": "Optimism Brewing, Coffee Ale. 5.8%",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "Raspberry Solarpunk",
+    "description": "Optimism Brewing, Sour. 5.8%",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "Golden Pilsner",
+    "description": "Fremont Brewing, Pilsner. 4.5%",
+    "price": 4.99,
+    "category_id": 7
+  },
+  {
+    "name": "Lush IPA",
+    "description": "Fremont Brewing, IPA. 7.0%",
+    "price": 4.99,
+    "category_id": 7
+  }
+]
