@@ -1,10 +1,11 @@
 const menuEls = document.querySelectorAll(".menu-card");
+// const deleteEls = document.querySelectorAll(".deleteBlog");
 
 // Variable to have the latest cart menu, Array of menu objects
 let cartMenu = [];
 
 // Who is the current user?
-const getUserInfo = () => document.querySelector(".username").textContent;
+const currentUser = document.querySelector(".username").textContent;
 
 /**
  * Function for getting the cart data from the localStorage
@@ -29,8 +30,7 @@ const saveCartToStorage = (user, menuList) =>
  */
 const addMenuToCart = (menu) => {
     cartMenu.push(menu);
-    const user = getUserInfo();
-    saveCartToStorage(user, cartMenu);
+    saveCartToStorage(currentUser, cartMenu);
 };
 
 /**
@@ -40,8 +40,7 @@ const addMenuToCart = (menu) => {
  */
 const deleteMenuFromCart = (index) => {
     cartMenu.splice(index, 1);
-    const user = getUserInfo();
-    saveCartToStorage(user, cartMenu);
+    saveCartToStorage(currentUser, cartMenu);
 };
 
 /**
@@ -62,7 +61,7 @@ const renderCart = () => {
         menu.innerHTML = `              <div class="d-flex justify-content-between">
         <p class="d-inline">${cartMenu[i].name}</p>
         <p class="d-inline">$${cartMenu[i].price}</p>
-        <button class="deleteBlog no-button">
+        <button class="deleteBlog no-button" data-index="${i}">
           <i
             class="avoid-clicks fa fa-trash"
             style="font-size: 24px"
@@ -73,8 +72,13 @@ const renderCart = () => {
         console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
         totalPrice += cartMenu[i].price * cartMenu[i].qty;
     }
-    let totPriceEl = document.querySelector("#total-price");
+    const totPriceEl = document.querySelector("#total-price");
     totPriceEl.textContent = totalPrice;
+
+    const deleteEls = document.querySelectorAll(".deleteBlog");
+    deleteEls.forEach((item) => {
+        item.addEventListener("click", deleteMenuHandler);
+    })
 };
 
 // Event handlers for clicking a menu card from menu lists
@@ -98,8 +102,7 @@ const selectMenuHandler = (event) => {
 };
 
 const initCart = () => {
-    const user = getUserInfo();
-    cartMenu = getCartFromStorage(user);
+    cartMenu = getCartFromStorage(currentUser);
 
     if (cartMenu) {
         renderCart();
@@ -108,50 +111,51 @@ const initCart = () => {
     }
 };
 
+
 // Event handler for deletion from the cart menus
-const deleteMenuHandler = async (event) => {
+const deleteMenuHandler = (event) => {
     // DELETE ("api/order/cart/:id") - delete an item in the cart Trash can next to item in cart
-    // event.preventDefault();
-    // const id = document.querySelector('.card').dataset.postId;
-    // if (id) {
-    //     const response = await fetch(`/api/order/cart/${id}`, {
-    //         method: 'DELETE',
-    //     });
-    //     if (response.ok) {
-    //         document.location.assign('/api/menu');
-    //     } else {
-    //         alert(response.statusText);
-    //     }
-    // }
+    const index = event.currentTarget.dataset.index;
+    deleteMenuFromCart(index);
+    renderCart();
 };
 
+const delAllMenuFromCart = () => {
+    cartMenu = [];
+    saveCartToStorage(currentUser, cartMenu);
+}
 // Event handler for the 'Submit Order' button
 const submitOrderHandler = async (event) => {
     // POST ("api/order/order-summary") - create the order and render the order summary page "Submit Order" button at the bottom of cart
     event.preventDefault();
+
+    const price_total = document.querySelector('#total-price').textContent;
+    // Client knows only user's first name
+    const user_id = document.querySelector('p.username').textContent;
+
     // Send a PUT request to the API endpoint
     const response = await fetch("/api/order/order-summary", {
         method: "POST",
-        body: JSON.stringify({ cartMenu }),
+        body: JSON.stringify({ item_list: cartMenu, price_total, user_id }),
         headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-        document.location.replace("??");
+        delAllMenuFromCart();
+        document.location.replace("/");
     } else {
         alert(response.statusText);
     }
 };
 
-// Click a menu item
-// document
+// Click a menu card
 menuEls.forEach((menuCard) => {
     menuCard.addEventListener("click", selectMenuHandler);
 });
 
-// Click 'delete' icon from the cart
-// document
-//     .querySelector('.cart-menus')
-//     .addEventListener('submit', deleteMenuHandler);
+// Click 'trash' icon from the cart
+// deleteEls.forEach((item) => {
+//     item.addEventListener("click", deleteMenuHandler);
+// });
 
 // 'Submit Order' button
 document
