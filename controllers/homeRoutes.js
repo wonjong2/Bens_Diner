@@ -29,14 +29,22 @@ router.get("/orderhistory/:id", async (req, res) => {
     console.log(getOrderStatus);
 
     var item_list_array = orderHistory_to_Array(getOrderStatus.item_list);
-
+    console.log(`item_list_array is: `, item_list_array);
+    
     try {
-      const menu_list_all = await Menu.findAll({
-        where: {
-          id: item_list_array
-        }
-      });
+      // const menu_list_all = await Menu.findAll({
+      //   where: {
+      //     id: item_list_array
+      //   }
+      // });
+      var menu_list_all = [];
 
+      for (let i=0; i<item_list_array.length; i++){
+        let curr_item = await Menu.findByPk(item_list_array[i]);
+        console.log(curr_item);
+        menu_list_all.push(curr_item);
+      }
+ 
       console.log("Menu list all is: ", menu_list_all);
       var menu_list = menu_list_all.map((item) => item.get({ plain: true }));
       // const menu_list = menu_list_all.get({ plain: true });
