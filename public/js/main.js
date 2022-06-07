@@ -157,9 +157,9 @@ const submitOrderHandler = async (event) => {
 };
 
 // Click a menu item
-// document
-//     .querySelector('.menu-list)
-//     .addEventListener('submit', selectMenuHandler);
+document
+    .querySelectorAll(".menu-card")
+    .addEventListener("submit", selectMenuHandler);
 
 // Click 'delete' icon from the cart
 // document
