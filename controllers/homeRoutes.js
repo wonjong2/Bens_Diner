@@ -69,13 +69,13 @@ router.get("/orderhistory/:id", async (req, res) => {
 });
 
 // Sign-Up GET route
-router.get("/sign-up", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/main-page");
-    return;
-  }
-  res.render("sign-up");
-});
+// router.get("/sign-up", (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/main-page");
+//     return;
+//   }
+//   res.render("sign-up");
+// });
 
 // // Login GET route
 // router.get("/", (req, res) => {
