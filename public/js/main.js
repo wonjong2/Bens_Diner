@@ -2,19 +2,19 @@
 let cartMenu = [];
 
 // Who is the current user?
-const getUserInfo = () => document.querySelector().textContent;
+const getUserInfo = () => document.querySelector(".username").textContent;
 
 /**
  * Function for getting the cart data from the localStorage
  * @param {string} user : Current user's name or email
- * @returns {array} : Array of menu objects (id, name, price, qty)
+ * @returns {array} : Array of menu objects (name, price, qty)
  */
 const getCartFromStorage = (user) => JSON.parse(localStorage.getItem(user));
 
 /**
  * Function for saving data to the localStorage
  * @param {string} user : Current user's name or email
- * @param {array} menulist : Array of menu objects (id, name, price, qty)
+ * @param {array} menulist : Array of menu objects (name, price, qty)
  * @returns {void} Nothing
  */
 const saveCartToStorage = (user, menuList) =>
@@ -22,7 +22,7 @@ const saveCartToStorage = (user, menuList) =>
 
 /**
  * Function for adding a menu to the cart and the localStorage
- * @param {object} menu : Selected menu by user (id, name, price, qty)
+ * @param {object} menu : Selected menu by user (name, price, qty)
  * @returns {void} Nothing
  */
 const addMenuToCart = (menu) => {
@@ -48,38 +48,77 @@ const deleteMenuFromCart = (index) => {
  * @returns {void} Nothing
  */
 const renderCart = () => {
-    const totalPrice = 0;
-    const cartEl = document.querySelector();
+    let totalPrice = 0;
+    const cartEl = document.querySelector("#cart-list");
 
     while (cartEl.firstChild) {
         cartEl.removeChild(cartEl.firstChild);
     }
 
     for (let i = 0; i < cartMenu.length; i++) {
-        var menu = document.createElement("li");
-        menu.innerHTML = `${cartMenu[i].name}($${cartMenu[i].price}) <i class="bi bi-trash"></i>`;
+        let menu = document.createElement("li");
+        menu.innerHTML = `              <div class="d-flex justify-content-between">
+        <p class="d-inline">${cartMenu[i].name}</p>
+        <p class="d-inline">$${cartMenu[i].price}</p>
+        <button class="deleteBlog no-button">
+          <i
+            class="avoid-clicks fa fa-trash"
+            style="font-size: 24px"
+          ></i>
+        </button>
+      </div>`;
         cartEl.appendChild(menu);
+        console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
         totalPrice += cartMenu[i].price * cartMenu[i].qty;
     }
+    let totPriceEl = document.querySelector("#total-price");
+    totPriceEl.textContent = totalPrice;
 };
 
 // Event handlers for clicking a menu from menu lists
-const selectMenuHandler = async (event) => {
+const selectMenuHandler = (event) => {
     // Update the Cart
     // And then save menu lists in the Cart to the localstorage
-    let id = event.target;
     let name = event.target;
     let price = event.target;
 
     const menu = {
-        id,
         name,
         price,
-        qty: 1,
     };
 
     addMenuToCart(menu);
     renderCart();
+};
+
+const initCart = () => {
+    // cartMenu = [];
+    // const user = getUserInfo();
+    // cartMenu = getCartFromStorage(user);
+
+    // TEST CODE
+    cartMenu = [
+        {
+            name: "Beer1",
+            price: 1.0,
+        },
+        {
+            name: "Beer2",
+            price: 1.5,
+        },
+        {
+            name: "Beer3",
+            price: 2.0,
+        },
+        {
+            name: "Beer4",
+            price: 2.5,
+        },
+    ];
+    // TEST CODE
+    if (cartMenu) {
+        renderCart();
+    }
 };
 
 // Event handler for deletion from the cart menus
@@ -131,3 +170,6 @@ const submitOrderHandler = async (event) => {
 // document
 //     .querySelector('.submit-order')
 //     .addEventListener('submit', submitOrderHandler);
+
+// Initialize the cart
+initCart();
