@@ -3,14 +3,14 @@
     <section class="col-sm-9 p-0">
       <!-- nav bar -->
       <nav class="navbar bg_img justify-content-between">
-        <h1 class="px-2 header_text">Ben's Diner</h1>
+        <h1 class="px-2 header_text"><a href="/">Ben's Diner</a></h1>
         <div class="header_text">
           {{#if logged_in}}
             <p class="username d-inline px-2">{{user_fname}}</p>
             <a class="nav_text d-inline px-2" type="submit">Logout</a>
           {{else}}
             <p class="username d-inline px-2">Guest</p>
-            <a class="nav-link" href="/">Login</a>
+            <a class="nav-link d-inline px-2" href="/">Login</a>
           {{/if}}
         </div>
       </nav>

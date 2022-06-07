@@ -352,7 +352,9 @@ form .button:active {
 }
 
 .card-body a,
-nav a {
+nav a,
+.header_text a,
+.diner-header a {
   text-decoration: none;
   color: #fff;
 }
@@ -361,7 +363,7 @@ nav a {
 
 #menuContainer {
   margin: 0 auto;
-  max-width: 810px;
+  max-width: 900px;
   padding: 0 20px;
   width: 100%;
 }
@@ -369,4 +371,6 @@ nav a {
 #cart {
   background-color: var(--off-white);
   height: 100vh;
+  position: fixed;
+  right: 0;
 }
