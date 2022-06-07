@@ -73,8 +73,9 @@ const renderCart = () => {
         totalPrice += cartMenu[i].price * cartMenu[i].qty;
     }
     const totPriceEl = document.querySelector("#total-price");
-    totPriceEl.textContent = totalPrice;
+    totPriceEl.textContent = totalPrice.toFixed(2);
 
+    // Add event listeners for the trash icons
     const deleteEls = document.querySelectorAll(".deleteBlog");
     deleteEls.forEach((item) => {
         item.addEventListener("click", deleteMenuHandler);
@@ -83,8 +84,6 @@ const renderCart = () => {
 
 // Event handlers for clicking a menu card from menu lists
 const selectMenuHandler = (event) => {
-    // Update the Cart
-    // And then save menu lists in the Cart to the localstorage
     const id = event.currentTarget.id;
     const name = event.currentTarget.querySelector("h5.card-title").textContent;
 
@@ -101,17 +100,6 @@ const selectMenuHandler = (event) => {
     renderCart();
 };
 
-const initCart = () => {
-    cartMenu = getCartFromStorage(currentUser);
-
-    if (cartMenu) {
-        renderCart();
-    } else {
-        cartMenu = [];
-    }
-};
-
-
 // Event handler for deletion from the cart menus
 const deleteMenuHandler = (event) => {
     // DELETE ("api/order/cart/:id") - delete an item in the cart Trash can next to item in cart
@@ -120,13 +108,14 @@ const deleteMenuHandler = (event) => {
     renderCart();
 };
 
+// Delete all menus from the cart
 const delAllMenuFromCart = () => {
     cartMenu = [];
     saveCartToStorage(currentUser, cartMenu);
 }
+
 // Event handler for the 'Submit Order' button
 const submitOrderHandler = async (event) => {
-    // POST ("api/order/order-summary") - create the order and render the order summary page "Submit Order" button at the bottom of cart
     event.preventDefault();
 
     const price_total = document.querySelector('#total-price').textContent;
@@ -152,15 +141,20 @@ menuEls.forEach((menuCard) => {
     menuCard.addEventListener("click", selectMenuHandler);
 });
 
-// Click 'trash' icon from the cart
-// deleteEls.forEach((item) => {
-//     item.addEventListener("click", deleteMenuHandler);
-// });
-
 // 'Submit Order' button
 document
     .querySelector("#submit-order-btn")
     .addEventListener("click", submitOrderHandler);
 
 // Initialize the cart
+const initCart = () => {
+    cartMenu = getCartFromStorage(currentUser);
+
+    if (cartMenu) {
+        renderCart();
+    } else {
+        cartMenu = [];
+    }
+};
+
 initCart();
