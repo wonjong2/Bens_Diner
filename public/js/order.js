@@ -23,10 +23,18 @@ const cancelOrderHandler = async (event) => {
 };
 
 //Countdown Timer in the
-function Timer(time_of_order) {
-  var secondsLeft = 30;
+function Timer() {
+  var imported_time = document.querySelector(".countdown_timer").textContent;
+  if(imported_time=="Order ready for pickup!"){
+    var secondsLeft=0;
+  }
+  else {
+    var secondsLeft = parseInt(imported_time);
+  }
   var seconds_remaining = secondsLeft;
   var seconds_remaining_string = "";
+  console.log(imported_time);
+  
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     // Each time the interval triggers, we subtract an interval amount
@@ -43,11 +51,12 @@ function Timer(time_of_order) {
         seconds_remaining_string=`0${Math.floor(seconds_remaining/10)}`;
     }
 
-    if (document.querySelector(".countdown_timer") != null) {
-      document.querySelector(".countdown_timer").textContent =
-        "0" + Math.floor(secondsLeft / 60) + ":" +seconds_remaining_string;
-    }
-
+    if(imported_time!="Order ready for pickup!"){
+      if (document.querySelector(".countdown_timer") != null) {
+        document.querySelector(".countdown_timer").textContent =
+          "0" + Math.floor(secondsLeft / 60) + ":" +seconds_remaining_string;
+      }
+    };
     // If statement filters if we've run out of time
     if (secondsLeft <= 0) {
       // Stops the timer at 0 or less seconds
@@ -55,7 +64,7 @@ function Timer(time_of_order) {
       // Displays an alternate message instead of the timer
       if (document.querySelector(".countdown_timer") != null) {
         document.querySelector(".countdown_timer").textContent =
-          "Food is ready for pickup!";
+          "Order ready for pickup!";
       }
       // Clears the interval to stop counting  time
       clearInterval(timerInterval);
@@ -69,7 +78,7 @@ function Timer(time_of_order) {
 //     .addEventListener('submit', newOrderHandler);
 
 //Starts running the countdown timer by default
-Timer(time_of_order);
+Timer();
 
 // 'Cancel Order' button
 document
