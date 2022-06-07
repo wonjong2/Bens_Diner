@@ -40,7 +40,7 @@ router.get("/orderhistory/:id", async (req, res) => {
       console.log("Menu list all is: ", menu_list_all);
       var menu_list = menu_list_all.map((item) => item.get({ plain: true }));
       // const menu_list = menu_list_all.get({ plain: true });
-      console.log("Menu list is: ", menu_list);
+      // console.log("Menu list is: ", menu_list);
 
 
     } catch (err) {
