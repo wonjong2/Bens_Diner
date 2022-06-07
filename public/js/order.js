@@ -1,12 +1,5 @@
-// Event handler for the 'New Order' button, it leads to the main page
-// const newOrderHandler = async (event) => {
-//     event.preventDefault();
-//     document.location.replace("/api/menu");
-// };
-
 // Event handler for the 'Cancel Order' button
 const cancelOrderHandler = async (event) => {
-  // DELETE ("api/order/order-summary/:id") - delete the newly created order "Cancel Order" button on order summary page
   event.preventDefault();
   const id = document.querySelector("[data-id]").dataset.id;
   if (id) {
@@ -15,7 +8,7 @@ const cancelOrderHandler = async (event) => {
     });
     if (response.ok) {
       alert("Your order has been cancelled!");
-      document.location.assign("/api/menu/6");
+      document.location.replace("/api/menu/6");
     } else {
       alert(response.statusText);
     }
@@ -25,8 +18,8 @@ const cancelOrderHandler = async (event) => {
 //Countdown Timer in the
 function Timer() {
   var imported_time = document.querySelector(".countdown_timer").textContent;
-  if(imported_time=="Order ready for pickup!"){
-    var secondsLeft=0;
+  if (imported_time == "Order ready for pickup!") {
+    var secondsLeft = 0;
   }
   else {
     var secondsLeft = parseInt(imported_time);
@@ -34,27 +27,27 @@ function Timer() {
   var seconds_remaining = secondsLeft;
   var seconds_remaining_string = "";
   console.log(imported_time);
-  
+
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     // Each time the interval triggers, we subtract an interval amount
     secondsLeft--;
     seconds_remaining = secondsLeft;
     // This updates the timer count at the top of the webpage
-    while(seconds_remaining > 600) {
-        seconds_remaining -= 600;
+    while (seconds_remaining > 600) {
+      seconds_remaining -= 600;
     }
 
-    if(seconds_remaining>100){
-        seconds_remaining_string=seconds_remaining;
+    if (seconds_remaining > 100) {
+      seconds_remaining_string = seconds_remaining;
     } else {
-        seconds_remaining_string=`0${Math.floor(seconds_remaining/10)}`;
+      seconds_remaining_string = `0${Math.floor(seconds_remaining / 10)}`;
     }
 
-    if(imported_time!="Order ready for pickup!"){
+    if (imported_time != "Order ready for pickup!") {
       if (document.querySelector(".countdown_timer") != null) {
         document.querySelector(".countdown_timer").textContent =
-          "0" + Math.floor(secondsLeft / 60) + ":" +seconds_remaining_string;
+          "0" + Math.floor(secondsLeft / 60) + ":" + seconds_remaining_string;
       }
     };
     // If statement filters if we've run out of time
@@ -71,11 +64,6 @@ function Timer() {
     }
   }, 100); // NOTE: DECI-SECOND NOTATION, EVERY 1/10th OF A SECOND WE COUNT DOWN
 }
-
-// 'New Order' button
-// document
-//     .querySelector('.new-order')
-//     .addEventListener('submit', newOrderHandler);
 
 //Starts running the countdown timer by default
 Timer();
