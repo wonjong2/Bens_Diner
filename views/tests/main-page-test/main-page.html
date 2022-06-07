@@ -9,38 +9,108 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../../public/css/style.css" />
   </head>
 
   <body>
     <main>
-      <div class="row">
-        <section class="col-sm-9">
+      <div class="row m-0 p-0">
+        <section class="col-sm-9 p-0">
           <!-- nav bar -->
-          <nav class="navbar order-summary-header justify-content-between">
-            <h1 class="px-2">Ben's Diner</h1>
-            <div>
+          <nav class="navbar bg_img justify-content-between">
+            <h1 class="px-2 header_text">Ben's Diner</h1>
+            <div class="header_text">
               <p class="username d-inline px-2">Courtney</p>
-              <a class="logout-button d-inline px-2" type="submit">Logout</a>
+              <a class="nav_text d-inline px-2" type="submit">Logout</a>
             </div>
           </nav>
           <!-- nav bar -->
 
           <!-- menu -->
-          <div class="container bcontent">
-            <div class="card" style="width: 500px">
-              <div class="row no-gutters">
-                <div class="col-sm-5">
-                  <img
-                    class="card-img placeholder"
-                    src=""
-                    alt="menu item photo"
-                  />
+          <div class="row" id="menuContainer">
+            <div class="col-sm-6 my-2 p-0">
+              <div class="container d-flex justify-content-center">
+                <div class="card" style="width: 500px">
+                  <div class="row no-gutters">
+                    <div class="col-sm-5">
+                      <img
+                        class="card-img placeholder"
+                        src=""
+                        alt="menu item photo"
+                      />
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Menu Item Name</h5>
+                        <p class="card-text">Cost</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-7">
-                  <div class="card-body">
-                    <h5 class="card-title">Menu Item Name</h5>
-                    <p class="card-text">Cost</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 my-2 p-0">
+              <div class="container d-flex justify-content-center">
+                <div class="card" style="width: 500px">
+                  <div class="row no-gutters">
+                    <div class="col-sm-5">
+                      <img
+                        class="card-img placeholder"
+                        src=""
+                        alt="menu item photo"
+                      />
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Menu Item Name</h5>
+                        <p class="card-text">Cost</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 my-2 p-0">
+              <div class="container d-flex justify-content-center">
+                <div class="card" style="width: 500px">
+                  <div class="row no-gutters">
+                    <div class="col-sm-5">
+                      <img
+                        class="card-img placeholder"
+                        src=""
+                        alt="menu item photo"
+                      />
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Menu Item Name</h5>
+                        <p class="card-text">Cost</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 my-2 p-0">
+              <div class="container d-flex justify-content-center">
+                <div class="card" style="width: 500px">
+                  <div class="row no-gutters">
+                    <div class="col-sm-5">
+                      <img
+                        class="card-img placeholder"
+                        src=""
+                        alt="menu item photo"
+                      />
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Menu Item Name</h5>
+                        <p class="card-text">Cost</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -50,10 +120,10 @@
         </section>
 
         <!-- cart -->
-        <aside class="col-sm-3">
+        <aside class="col-sm-3 p-0" id="cart">
           <div class="py-5">
             <div id="cart-header">
-              <h4 class="header_text">Cart</h4>
+              <h4 class="">Cart</h4>
             </div>
 
             <div id="cart-items">
