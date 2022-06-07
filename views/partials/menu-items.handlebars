@@ -1,0 +1,19 @@
+{{#each menu as |menus|}}
+  <div class="col-sm-6 my-2 p-0">
+    <div class="container d-flex justify-content-center">
+      <div class="card" style="width: 500px">
+        <div class="row no-gutters">
+          <div class="col-sm-5">
+            <img class="card-img placeholder" src="" alt="menu item photo" />
+          </div>
+          <div class="col-sm-7">
+            <div class="card-body">
+              <h5 class="card-title">{{menu.name}}</h5>
+              <p class="card-text">{{menu.price}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
