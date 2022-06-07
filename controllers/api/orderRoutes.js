@@ -56,7 +56,6 @@ router.delete("/order-summary/:id", async (req, res) => {
     const deleteOrder = await OrderHistory.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
