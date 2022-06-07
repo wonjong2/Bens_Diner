@@ -42,6 +42,7 @@ router.post("/order-summary", async (req, res) => {
     const newOrder = await OrderHistory.create({
       ...req.body,
       user_id: req.session.user_id,
+      pickup_time: new Date() + Math.floor(Math.random() * 15)*60*1000,
     });
 
     res.status(200).json(newOrder);
