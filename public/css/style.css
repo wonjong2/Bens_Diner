@@ -35,10 +35,6 @@ header img {
 
 /* Main Content */
 
-body {
-  font-size: 16px;
-}
-
 #qrCode,
 #signin {
   border-right: solid 1px var(--bone);
@@ -355,9 +351,22 @@ form .button:active {
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.card-body a {
+.card-body a,
+nav a {
   text-decoration: none;
   color: #fff;
 }
 
 /* Order Summary CSS */
+
+#menuContainer {
+  margin: 0 auto;
+  max-width: 810px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+#cart {
+  background-color: var(--off-white);
+  height: 100vh;
+}
