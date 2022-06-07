@@ -54,7 +54,8 @@
 
                     <div class="card-body">
                         <h6 class="card-title">Estimated Time Remaining</h6>
-                        <p class="card-text">05:01</p>
+                        <p class="card-text countdown_timer">{{format_time_remaining getOrderStatus.date_created}}</p>
+                        <p class="card-text countdown_timer">00:00</p>
                     </div>
 
                     <div class="card-body w-100">
@@ -65,8 +66,10 @@
 
                         <div class="field button my-1">
                             <div class="button-layer"></div>
+
                             <button id="cancel-btn" data-id="{{getOrderStatus.id}}">Cancel
                                     Order</button>
+
                         </div>
 
                         <div class="field button my-1">
