@@ -1,3 +1,5 @@
+const menuEls = document.querySelectorAll(".menu-card");
+
 // Variable to have the latest cart menu, Array of menu objects
 let cartMenu = [];
 
@@ -49,7 +51,7 @@ const deleteMenuFromCart = (index) => {
  */
 const renderCart = () => {
     let totalPrice = 0;
-    const cartEl = document.querySelector("#cart-list");
+    const cartEl = document.getElementById("cart-list");
 
     while (cartEl.firstChild) {
         cartEl.removeChild(cartEl.firstChild);
@@ -75,16 +77,20 @@ const renderCart = () => {
     totPriceEl.textContent = totalPrice;
 };
 
-// Event handlers for clicking a menu from menu lists
+// Event handlers for clicking a menu card from menu lists
 const selectMenuHandler = (event) => {
     // Update the Cart
     // And then save menu lists in the Cart to the localstorage
-    let name = event.target;
-    let price = event.target;
+    const id = event.currentTarget.id;
+    const name = event.currentTarget.querySelector("h5.card-title").textContent;
+
+    const price = event.currentTarget.querySelector("p.card-text").textContent;
 
     const menu = {
+        id,
         name,
         price,
+        qty: "1",
     };
 
     addMenuToCart(menu);
@@ -92,32 +98,13 @@ const selectMenuHandler = (event) => {
 };
 
 const initCart = () => {
-    // cartMenu = [];
-    // const user = getUserInfo();
-    // cartMenu = getCartFromStorage(user);
+    const user = getUserInfo();
+    cartMenu = getCartFromStorage(user);
 
-    // TEST CODE
-    cartMenu = [
-        {
-            name: "Beer1",
-            price: 1.0,
-        },
-        {
-            name: "Beer2",
-            price: 1.5,
-        },
-        {
-            name: "Beer3",
-            price: 2.0,
-        },
-        {
-            name: "Beer4",
-            price: 2.5,
-        },
-    ];
-    // TEST CODE
     if (cartMenu) {
         renderCart();
+    } else {
+        cartMenu = [];
     }
 };
 
@@ -141,25 +128,25 @@ const deleteMenuHandler = async (event) => {
 // Event handler for the 'Submit Order' button
 const submitOrderHandler = async (event) => {
     // POST ("api/order/order-summary") - create the order and render the order summary page "Submit Order" button at the bottom of cart
-    // event.preventDefault();
-    //     // Send a PUT request to the API endpoint
-    //     const response = await fetch('/api/order/order-summary', {
-    //         method: 'POST',
-    //         body: JSON.stringify({ cartMenu }),
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
-    //     if (response.ok) {
-    //         document.location.replace('??');
-    //     } else {
-    //         alert(response.statusText);
-    //     }
-    // }
+    event.preventDefault();
+    // Send a PUT request to the API endpoint
+    const response = await fetch("/api/order/order-summary", {
+        method: "POST",
+        body: JSON.stringify({ cartMenu }),
+        headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+        document.location.replace("??");
+    } else {
+        alert(response.statusText);
+    }
 };
 
 // Click a menu item
-document
-    .querySelectorAll(".menu-card")
-    .addEventListener("submit", selectMenuHandler);
+// document
+menuEls.forEach((menuCard) => {
+    menuCard.addEventListener("click", selectMenuHandler);
+});
 
 // Click 'delete' icon from the cart
 // document
@@ -167,9 +154,9 @@ document
 //     .addEventListener('submit', deleteMenuHandler);
 
 // 'Submit Order' button
-// document
-//     .querySelector('.submit-order')
-//     .addEventListener('submit', submitOrderHandler);
+document
+    .querySelector("#submit-order-btn")
+    .addEventListener("click", submitOrderHandler);
 
 // Initialize the cart
 initCart();
