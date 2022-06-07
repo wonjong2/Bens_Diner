@@ -15,7 +15,7 @@ const cancelOrderHandler = async (event) => {
     });
     if (response.ok) {
       alert("Your order has been cancelled!");
-      document.location.assign("/api/menu");
+      document.location.assign("/api/menu/6");
     } else {
       alert(response.statusText);
     }
