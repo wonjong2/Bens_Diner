@@ -319,6 +319,11 @@ form .button input[type="submit"],
   font-size: small;
 }
 
+#menuContainer .menu_item img {
+  max-height: 150px;
+  width: auto;
+}
+
 #cart {
   background-color: var(--off-white);
   height: 100vh;
