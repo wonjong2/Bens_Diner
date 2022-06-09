@@ -32,10 +32,6 @@ User.init(
         isEmail: true,
       },
     },
-    phone_number: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
