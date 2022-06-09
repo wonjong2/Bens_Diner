@@ -38,9 +38,10 @@ No guidance, project choices, or project direction has been provided.
 ## Generalized Tasks
 
 Web Development Tasks:
-- Use the Foundation front-end framework and populate the DOM with: buttons and text areas in an organized layout
-- Write javascript functions to handle Google Translate API fetch operations (pull, `JSON` parse, write to the DOM, and save data)  
-- Write javascript functions to handle Merriam-Webster API fetch operations (pull, `JSON` parse, write to the DOM and save data)
+- Use the Bootstrap front-end framework and populate the DOM with: buttons, text areas, and cards in an organized layout
+- Write handlebar.js files and "views" to handle custom information added to the website based on `MySQL` queries
+- Write vascript functions to handle route requests to perform CRUD operations on a `MySQL` database (Create, Retrieve, Update, Delete)  
+- Write javascript util functions for both front end and back end
 - Use `Buttons` and `listenerEvents` to add web app functionality and responsiveness
 - Use `@media queries` to add project screen adaptability and responsiveness
 - Store translate history in `localStorage`
@@ -51,51 +52,63 @@ Project Management Tasks:
 - Develop a process to cleanly push and pull code to GitHub to reduce merge conflicts 
 - Check in with group members and *communicate* changes and problems
 
-## List of Files
-
--   README.md - This current read me file
--   gitignore - Git Ignore file to ignore node_modules, DS.Store, (Mac users), .env
--   server.js - The primary javascript file that runs the application
--   db/ - The primary directory that contains database information in JSON format
--   models/ - The directory which stores all model configurations and connectivity
--   routes/ - The dirctory which contains all route files and miscellaneous custom middleware
--   config/ - The directory which contains the connection.js file for sequelize connectivity
--   package.JSON - JSON package that stores modules and settings used
--   ~./assets/- Folder for stored screenshots and instructor provided demo.gif
-
-# Original Homework Assignment Details
+# Original Project Details
 
 ## User Story
 
 ```md
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+AS A business owner
+
+I WANT customers to order through a web app
+SO THAT I can receive orders
+I WANT customers to create an account
+SO THAT they can view past / active orders
+I WANT customers to be able to order as guest
+SO THAT they aren’t deterred by sign-in 
+I WANT customers to be able to add and delete items from their order
+SO THAT they can get exactly what they want
 ```
 
 ## Acceptance Criteria
 
 ```md
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete data in my database
+GIVEN a menu ordering page
+
+WHEN I visit the site for the first time
+THEN I am presented with a landing page with a QR code, log in form, and ability to check order status
+WHEN I choose to sign up
+THEN I am prompted to enter my name, email, phone number, and password
+WHEN I click the sign up button
+THEN MY user credentials are saved and I am logged into the site
+WHEN I revisit later and choose to log in
+THEN I am prompted to enter my email and password
+WHEN I select Order as Guest or I am signed into the site
+THEN I am presented with the main page with the restaurant title, tabs for food categories, food options based on default category, and a shopping cart to store orders
+WHEN I select a food option 
+THEN MY option is added to the cart with a delete option and the total price is updated
+WHEN I select the trash can next to the food item
+THEN the food item is deleted from the cart
+WHEN I select the “submit order” button in the cart
+THEN I am presented with a confirmation of my order with name and date, an order number, and estimated cook time remaining
 ```
+
+## Miro Mockups
+
+![Landing Page Mockup](./misc_assets/Landing_Page.png "Landing Page Mockup, Miro Screenshot")
+
+![Menu Mockup](./misc_assets/Menu_Page.png "Menu Mockup, Miro Screenshot")
+
+![Order Summary Mockup](./misc_assets/OrderHistory_Page.png "Order Summary Mockup, Miro Screenshot")
+
 
 ## URL to the GitHub Repository
 
 [GitHub Pages Link:https://github.com/wonjong2/Bens_Diner](https://github.com/wonjong2/Bens_Diner)
 
+
 ## URL to the Heroku Hosted Application
 
-[Ben's Diner, Back End Functionality](https://bens-diner.herokuapp.com/)
+[Ben's Diner, Heroku Deployment:https://bens-diner.herokuapp.com](https://bens-diner.herokuapp.com/)
 
 ## License
 
