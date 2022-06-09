@@ -88,6 +88,14 @@ const viewStatusHandler = async (event) => {
   }
 };
 
+// Event handler for the 'Continue as Guest' button on the QR Code
+const continueAsGuest = async (event) => {
+  event.preventDefault();
+
+  // If successful, redirect the browser to the menu page
+  document.location.assign(`/api/menu/6`);
+};
+
 // 'login (Order Now)' button
 document
   .querySelector("#login-btn")
@@ -102,3 +110,8 @@ document
 document
   .querySelector("#check-order-btn")
   .addEventListener("click", viewStatusHandler);
+
+// 'QRCode' button
+document
+.querySelector("#qrCode")
+.addEventListener("click", continueAsGuest);
