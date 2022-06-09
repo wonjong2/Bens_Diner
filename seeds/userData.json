@@ -1,5 +1,13 @@
 [
   {
+    "user_id": 1,
+    "first_name": "GUEST",
+    "email": "guest@hotmail.com",
+    "password": "password12345",
+    "phone_number": 5555555555
+  },
+  {
+    "user_id": 2,
     "first_name": "Vladimir",
     "last_name": "Berka",
     "email": "vlad@hotmail.com",
@@ -7,6 +15,7 @@
     "phone_number": 5555555555
   },
   {
+    "user_id": 3,
     "first_name": "Natalie",
     "last_name": "Bulger",
     "email": "natalie@hotmail.com",
@@ -14,6 +23,7 @@
     "phone_number": 5555555555
   },
   {
+    "user_id": 4,
     "first_name": "Wonjong",
     "last_name": "Park",
     "email": "wonjong@hotmail.com",
@@ -21,6 +31,7 @@
     "phone_number": 5555555555
   },
   {
+    "user_id": 5,
     "first_name": "Courtney",
     "last_name": "Struelens",
     "email": "courtney@hotmail.com",

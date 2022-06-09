@@ -29,6 +29,12 @@ OrderHistory.init(
         key: "user_id",
       },
     },
+    // Date of the order pickup time, auto generated through seed, otherwise random time added to current date
+    pickup_time: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     // Date of the order, auto generated
     date_created: {
       type: DataTypes.DATE,

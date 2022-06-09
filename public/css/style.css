@@ -5,7 +5,8 @@
   --green-sheen: #86b8b1;
 }
 
-/* Header */
+/* LANDING PAGE */
+
 .bg_img {
   height: fit-content;
   background-color: var(--red);
@@ -31,9 +32,7 @@ header img {
   transform: rotate(7deg);
 }
 
-/* Header */
-
-/* Main Content */
+/* content */
 
 #qrCode,
 #signin {
@@ -65,8 +64,6 @@ header img {
   justify-content: center;
   align-items: center;
 }
-
-/* Main Content */
 
 /* sign in or sign up */
 
@@ -276,38 +273,60 @@ form .button input[type="submit"],
   cursor: pointer;
 }
 
-/* sign in or sign up */
+/* MAIN PAGE */
 
-/* media responsiveness */
-
-form .button:active {
-  transform: translateY(-1px);
+#menu_nav_container nav {
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 800px) {
-  #qrCode img {
-    height: 40vw;
-  }
-
-  header img,
-  #header_img_container {
-    display: none;
-  }
-
-  header h1 {
-    font-size: 16vw;
-    letter-spacing: -5px;
-  }
-
-  header h4 {
-    font-size: 8vw;
-    letter-spacing: -2px;
-  }
+.menu_nav .nav-item {
+  font-size: large;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--green-sheen);
 }
 
-/* media responsiveness */
+.menu_nav .nav-item:hover {
+  transform: scale(1.1);
+}
 
-/* Order Summary CSS */
+#menuContainer {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+#menuContainer .menu_item {
+  height: 150px;
+}
+
+#menuContainer .menu_item button,
+#menuContainer .menu_item .card_content {
+  height: 100%;
+}
+
+#menuContainer .menu_item button {
+  background: transparent;
+  border: none !important;
+}
+
+#menuContainer .card-body {
+  text-align: left;
+}
+
+#menuContainer .card-body p {
+  font-size: small;
+}
+
+#cart {
+  background-color: var(--off-white);
+  height: 100vh;
+  position: fixed;
+  right: 0;
+}
+
+/* ORDER SUMMARY PAGE */
 
 .order-summary-header {
   background-color: var(--green-sheen);
@@ -352,21 +371,36 @@ form .button:active {
 }
 
 .card-body a,
-nav a {
+nav a,
+.header_text a,
+.diner-header a {
   text-decoration: none;
   color: #fff;
 }
 
-/* Order Summary CSS */
+/* MEDIA RESPONSIVENESS */
 
-#menuContainer {
-  margin: 0 auto;
-  max-width: 810px;
-  padding: 0 20px;
-  width: 100%;
+form .button:active {
+  transform: translateY(-1px);
 }
 
-#cart {
-  background-color: var(--off-white);
-  height: 100vh;
+@media screen and (max-width: 800px) {
+  #qrCode img {
+    height: 40vw;
+  }
+
+  header img,
+  #header_img_container {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 16vw;
+    letter-spacing: -5px;
+  }
+
+  header h4 {
+    font-size: 8vw;
+    letter-spacing: -2px;
+  }
 }

@@ -1,0 +1,112 @@
+<main>
+  <div class="row m-0 p-0" id="menu_page">
+    <section class="col-sm-9 p-0">
+      <!-- nav bar -->
+      <nav class="navbar bg_img justify-content-between">
+        <h1 class="px-2 header_text"><a href="/">Ben's Diner</a></h1>
+        <div class="header_text">
+          {{#if logged_in}}
+            <p class="username d-inline px-2">{{user_fname}}</p>
+            <a
+              class="nav_text d-inline px-2 logout-button"
+              type="submit"
+            >Logout</a>
+          {{else}}
+            <p class="username d-inline px-2">Guest</p>
+            <a class="nav-link d-inline px-2" href="/">Login</a>
+          {{/if}}
+        </div>
+      </nav>
+      <!-- nav bar -->
+
+      <!-- menu -->
+      <div id="menu_nav_container">
+        <!-- menu nav -->
+        <nav class="d-flex justify-content-center">
+          <ul class="menu_nav navbar-nav d-flex flex-row mt-3 mt-lg-0">
+            {{>categories}}
+          </ul>
+        </nav>
+
+        <!-- menu items -->
+        <div class="row" id="menuContainer">
+          {{>menu-items}}
+        </div>
+        <!-- menu -->
+      </div>
+    </section>
+
+    <!-- cart -->
+    <aside class="col-sm-3 p-0" id="cart">
+      <div class="py-5">
+        <div id="cart-header">
+          <h4 class="d-flex justify-content-center">Cart</h4>
+        </div>
+
+        <div id="cart-items">
+          <ul id="cart-list">
+            <li>
+              <div class="d-flex justify-content-between">
+                <p class="d-inline">Item Name</p>
+                <p class="d-inline">$$$</p>
+                <button class="deleteBlog no-button">
+                  <i
+                    class="avoid-clicks fa fa-trash"
+                    style="font-size: 24px"
+                  ></i>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="d-flex justify-content-between">
+                <p class="d-inline">Item Name</p>
+                <p class="d-inline">$$$</p>
+                <button class="deleteBlog no-button">
+                  <i
+                    class="avoid-clicks fa fa-trash"
+                    style="font-size: 24px"
+                  ></i>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="d-flex justify-content-between">
+                <p class="d-inline">Item Name</p>
+                <p class="d-inline">$$$</p>
+                <button class="deleteBlog no-button">
+                  <i
+                    class="avoid-clicks fa fa-trash"
+                    style="font-size: 24px"
+                  ></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <div class="d-flex justify-content-between">
+            <h5 class="d-inline">Total:</h5>
+            <p class="d-inline" id="total-price">$$$</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field button">
+        <div class="button-layer"></div>
+        <button><a href="/" id="submit-order-btn">Submit Order</a></button>
+      </div>
+    </aside>
+    <!-- cart -->
+  </div>
+</main>
+
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+{{/if}}
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
+<script src="/js/main.js"></script>
+<script src="/js/logout.js"></script>

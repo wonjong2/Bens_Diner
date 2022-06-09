@@ -1,0 +1,11 @@
+{{#each categories as |category|}}
+  <li class="nav-item text-center mx-2 mx-lg-1 px-3">
+    <a
+      class="nav-link active"
+      aria-current="page"
+      href="/api/menu/{{category.id}}"
+    >
+      {{category.name}}
+    </a>
+  </li>
+{{/each}}
