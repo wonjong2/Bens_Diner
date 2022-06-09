@@ -8,24 +8,48 @@
 
 ## Assignment Description
 
-This is a Javascript homework assignment for the UW Bootcamp. The goal of the assignment is to create the backend functionality for an online "warehouse". The Javascript file is the primary challenge of this assignment with user information persisting, stored, and accessed using mySQL databases. "Inquirer", "express", "mySQL2", and "sequelize" NPM packages shall be used. The entirety of the application will be run from the console.
+This is a Full Stack Web Development *group project* for the UW Bootcamp. The goal of the project is to create a fully functional full stack web application using all technnologies learned to date.
+(Including `HTML`, `CSS`, `JavaScript`, `Bootstrap`, `Node.JS`, `Express.JS`, `Handlebars.JS`, `MySQL`, `Sequelize ORM`, `Model-View-Controller Paradigm`, `Bcrypt`, `Express-Session`, `.env`, `connect-session-sequelize`)
 
-A mockup is provided by the instructor to demonstrate desired application appearance and functionality.
+This project stresses equal importance between project management and web development.
+A development process shall be identified and agreed upon to assist with pushing code, pulling code, and merging code conflicts on GitHub. This process shall include the division of labor and tasks.
 
-The original user story, acceptance criteria, and mockup for the assignment is copied to the end of this document.
+A mockup / wireframe shall be created by an individual within the project team and used as a visual goal. (`UX/UI`)
 
-## Assignment Scope
+A project user story and acceptance criteria shall be created by the project team and used as a functionality goal. (`Product Manager/Owner`)
 
-Write the backend javascript code to allow users to Create, Retrieve, Update, and Destroy (CRUD) database information using routes between an express session and the server side mySQL database.
-Testing and usage of routes will be through `Insomnia`.
+Project management shall be `Agile` and augmented with `Kanban` style organization: with individual tasks divided, assigned, and tracked.
 
-Portions of the backend code have been provided. The focus of the assignement is to complete all route files, and models for the database.
+The group developed user story, acceptance criteria, and mockup for the assignment are copied to the end of this document.
+
+## Project Scope
+
+FOOD APP!
+Create a full stack web page application that allows restaurant customers to view a digital menu, and order food without a human server interface.
+Menu items shall be displayed and added to a shopping cart on click, with routes navigating various button events.
+The temporary shopping cart will save data using `local storage`.
+The permanent order history will available in a `MySQL database`.
+
+Testing routes will be available using `Insomnia`.
+
+No starting code has been provided.
+No guidance, project choices, or project direction has been provided.
 
 ## Generalized Tasks
 
--   Use routes to navigate and access information
--   Write a javascript file with multiple functions to handle CRUD operations.
--   Write multiple route request in Insomnia to manipulate server side databases
+Web Development Tasks:
+- Use the Foundation front-end framework and populate the DOM with: buttons and text areas in an organized layout
+- Write javascript functions to handle Google Translate API fetch operations (pull, `JSON` parse, write to the DOM, and save data)  
+- Write javascript functions to handle Merriam-Webster API fetch operations (pull, `JSON` parse, write to the DOM and save data)
+- Use `Buttons` and `listenerEvents` to add web app functionality and responsiveness
+- Use `@media queries` to add project screen adaptability and responsiveness
+- Store translate history in `localStorage`
+
+Project Management Tasks:
+- Create a wireframe goal for the web app
+- Identify and divide tasks among group members 
+- Develop a process to cleanly push and pull code to GitHub to reduce merge conflicts 
+- Check in with group members and *communicate* changes and problems
 
 ## List of Files
 
