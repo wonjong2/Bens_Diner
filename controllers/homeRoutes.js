@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET route for order status (will need withAuth), ID is order number
-router.get("/orderhistory/:id", async (req, res) => {
+router.get("/orderhistory/:id", withAuth, async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
@@ -49,8 +49,6 @@ router.get("/orderhistory/:id", async (req, res) => {
       var menu_list = menu_list_all.map((item) => item.get({ plain: true }));
       // const menu_list = menu_list_all.get({ plain: true });
       // console.log("Menu list is: ", menu_list);
-
-
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
