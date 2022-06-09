@@ -6,7 +6,7 @@
         <h1 class="px-2 header_text"><a href="/">Ben's Diner</a></h1>
         <div class="header_text">
           {{#if logged_in}}
-            <p class="username d-inline px-2">{{user_fname}}</p>
+            <p class="username d-inline px-2">{{user.fname}}</p>
             <a
               class="nav_text d-inline px-2 logout-button"
               type="submit"
@@ -40,21 +40,21 @@
     <aside class="col-sm-3 p-0" id="cart">
       <div class="py-5 px-5">
         <div id="cart-header">
-          <h4 class="d-flex justify-content-center">Cart</h4>
+          <h4>Your Order</h4>
         </div>
 
         <div id="cart-items d-flex justify-content-between">
           <ul id="cart-list"></ul>
 
-          <div class="d-flex justify-content-between">
-            <h5>Total:</h5>
+          <div class="d-flex justify-content-between pt-2 total_field">
+            <h4>Total:</h4>
             <p id="total-price">0.00</p>
           </div>
         </div>
       </div>
 
       <div class="field button d-flex justify-content-center">
-        <button><a href="/" id="submit-order-btn">Submit Order</a></button>
+        <button class="no-button"><a href="/" id="submit-order-btn">Submit Order</a></button>
       </div>
     </aside>
     <!-- cart -->

@@ -63,7 +63,7 @@ const renderCart = () => {
           <p>${cartMenu[i].name}</p>
         </div>
         <div class="d-inline">
-          <p class="d-inline">$${cartMenu[i].price}</p>
+          <p class="d-inline px-2">$${cartMenu[i].price}</p>
           <button class="deleteBlog no-button" data-index="${i}">
             <i
               class="avoid-clicks fa fa-trash"
