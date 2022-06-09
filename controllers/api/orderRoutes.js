@@ -41,25 +41,31 @@ const orderHistory_to_String = require("../../utils/helpers");
 router.post("/order-summary", async (req, res) => {
   try {
     var orderString = "";
+    console.log(req.body.item_list);
 
     if (req.body.item_list.length == 1) {
       orderString = req.body.item_list[0].toString();
-      return orderString;
     }
-
-    for (let i = 0; i < req.body.item_list.length - 1; i++) {
-      orderString = orderString + req.body.item_list[i].toString() + ",";
-    }
-
-    orderString =
+    else {
+      for (let i = 0; i < req.body.item_list.length - 1; i++) {
+        orderString = orderString + req.body.item_list[i].toString() + ",";
+      }
+      orderString =
       orderString +
       req.body.item_list[req.body.item_list.length - 1].toString();
+    }
+
+    console.log(orderString);
+
+    //Setting date with a random time. The random time corresponds to the approximate time it takes to make the order
+    var future_date = new Date();
+    future_date.setMinutes(future_date.getMinutes() + (Math.floor(Math.random() * 10)+5) * 60 * 1000);
 
     const newOrder = await OrderHistory.create({
       item_list: orderString,
       price_total: req.body.price_total,
       user_id: req.session.user_id,
-      pickup_time: new Date() + Math.floor(Math.random() * 15) * 60 * 1000,
+      pickup_time: future_date,
     });
 
     res.status(200).json(newOrder);
