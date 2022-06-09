@@ -7,12 +7,12 @@ module.exports = {
     // Format date as MM/DD/YYYY
     //date is the time the order is expected to be ready
     var current_date = new Date();
-    // console.log(`Current date is: ${current_date}`);
-    // console.log(`Date of order is: ${date}`);
+    console.log(`Current date is: ${current_date}`);
+    console.log(`Date of order is: ${date}`);
     if (current_date > date) {
       return "Order ready for pickup!";
     } else {
-      return (date - current_date) / 1000;
+      return (date.getTime() - current_date.getTime()) / 1000;
     }
   },
   format_amount: (amount) => {
