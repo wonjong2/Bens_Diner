@@ -319,9 +319,18 @@ form .button input[type="submit"],
   font-size: small;
 }
 
+#menuContainer .card-body .card_price {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
 #menuContainer .menu_item img {
   max-height: 150px;
   width: auto;
+}
+
+#menuContainer .menu_item .img_container {
+  max-width: 150px;
 }
 
 #cart {
@@ -407,5 +416,10 @@ form .button:active {
   header h4 {
     font-size: 8vw;
     letter-spacing: -2px;
+  }
+
+  #cart {
+    height: fit-content;
+    position: static;
   }
 }

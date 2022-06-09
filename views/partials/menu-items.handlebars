@@ -1,21 +1,21 @@
 {{#each makeMenu.menus as |menu|}}
-  <div class="col-sm-6 my-2 p-0">
+  <div class="col-lg-6 my-2 p-0">
     <div class="container d-flex justify-content-center">
       <div class="card menu_item" style="width: 500px">
         <button class="menu-card" id="{{menu.id}}">
-          <div class="row no-gutters card_content">
-            <div class="col-sm-5">
+          <div class="row card_content">
+            <div class="col-5 px-2 img_container">
               <img
                 class="card-img"
                 src="/assets/food_photos/{{menu.id}}.png"
                 alt="menu item photo"
               />
             </div>
-            <div class="col-sm-7 py-2">
-              <div class="card-body p-0">
-                <div class="d-flex justify-content-between">
+            <div class="col-7 flex-grow-1">
+              <div class="card-body pr-2 py-2">
+                <div class="d-flex justify-content-between align-items-center">
                   <h5 class="card-title d-inline">{{menu.name}}</h5>
-                  <p class="card-text d-inline">{{menu.price}}</p>
+                  <p class="card-text d-inline card_price">{{menu.price}}</p>
                 </div>
                 <p class="card-text">{{menu.description}}</p>
               </div>
