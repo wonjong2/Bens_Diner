@@ -20,7 +20,7 @@ const getCartFromStorage = (user) => JSON.parse(localStorage.getItem(user));
  * @returns {void} Nothing
  */
 const saveCartToStorage = (user, menuList) =>
-    localStorage.setItem(user, JSON.stringify(menuList));
+  localStorage.setItem(user, JSON.stringify(menuList));
 
 /**
  * Function for adding a menu to the cart and the localStorage
@@ -28,8 +28,8 @@ const saveCartToStorage = (user, menuList) =>
  * @returns {void} Nothing
  */
 const addMenuToCart = (menu) => {
-    cartMenu.push(menu);
-    saveCartToStorage(currentUser, cartMenu);
+  cartMenu.push(menu);
+  saveCartToStorage(currentUser, cartMenu);
 };
 
 /**
@@ -38,8 +38,8 @@ const addMenuToCart = (menu) => {
  * @returns {void} Nothing
  */
 const deleteMenuFromCart = (index) => {
-    cartMenu.splice(index, 1);
-    saveCartToStorage(currentUser, cartMenu);
+  cartMenu.splice(index, 1);
+  saveCartToStorage(currentUser, cartMenu);
 };
 
 /**
@@ -48,17 +48,17 @@ const deleteMenuFromCart = (index) => {
  * @returns {void} Nothing
  */
 const renderCart = () => {
-    let totalPrice = 0;
-    const cartEl = document.getElementById("cart-list");
+  let totalPrice = 0;
+  const cartEl = document.getElementById("cart-list");
 
-    while (cartEl.firstChild) {
-        cartEl.removeChild(cartEl.firstChild);
-    }
+  while (cartEl.firstChild) {
+    cartEl.removeChild(cartEl.firstChild);
+  }
 
-    for (let i = 0; i < cartMenu.length; i++) {
-        // Create all elements for the cart menu
-        let menu = document.createElement("li");
-        menu.innerHTML = `              <div class="d-flex justify-content-between">
+  for (let i = 0; i < cartMenu.length; i++) {
+    // Create all elements for the cart menu
+    let menu = document.createElement("li");
+    menu.innerHTML = `              <div class="d-flex justify-content-between">
         <p class="d-inline">${cartMenu[i].name}</p>
         <p class="d-inline">$${cartMenu[i].price}</p>
         <button class="deleteBlog no-button" data-index="${i}">
@@ -68,94 +68,98 @@ const renderCart = () => {
           ></i>
         </button>
       </div>`;
-        cartEl.appendChild(menu);
-        console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
-        // Calculate the total price for the cart menu
-        totalPrice += cartMenu[i].price * cartMenu[i].qty;
-    }
-    const totPriceEl = document.querySelector("#total-price");
-    totPriceEl.textContent = totalPrice.toFixed(2);
+    cartEl.appendChild(menu);
+    console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
+    // Calculate the total price for the cart menu
+    totalPrice += cartMenu[i].price * cartMenu[i].qty;
+  }
+  const totPriceEl = document.querySelector("#total-price");
+  totPriceEl.textContent = totalPrice.toFixed(2);
 
-    // Add event listeners for the trash icons
-    const deleteEls = document.querySelectorAll(".deleteBlog");
-    deleteEls.forEach((item) => {
-        item.addEventListener("click", deleteMenuHandler);
-    })
+  // Add event listeners for the trash icons
+  const deleteEls = document.querySelectorAll(".deleteBlog");
+  deleteEls.forEach((item) => {
+    item.addEventListener("click", deleteMenuHandler);
+  });
 };
 
 // Event handlers for clicking a menu card from menu lists
 const selectMenuHandler = (event) => {
-    const id = event.currentTarget.id;
-    const name = event.currentTarget.querySelector("h5.card-title").textContent;
-    const price = event.currentTarget.querySelector("p.card-text").textContent;
+  const id = event.currentTarget.id;
+  const name = event.currentTarget.querySelector("h5.card-title").textContent;
+  const price = event.currentTarget.querySelector("p.card-text").textContent;
 
-    const menu = {
-        id,
-        name,
-        price,
-        qty: "1",
-    };
+  const menu = {
+    id,
+    name,
+    price,
+    qty: "1",
+  };
 
-    addMenuToCart(menu);
-    renderCart();
+  addMenuToCart(menu);
+  renderCart();
 };
 
 // Event handler for deletion from the cart menus
 const deleteMenuHandler = (event) => {
-    const index = event.currentTarget.dataset.index;
-    deleteMenuFromCart(index);
-    renderCart();
+  const index = event.currentTarget.dataset.index;
+  deleteMenuFromCart(index);
+  renderCart();
 };
 
 // Delete all menus from the cart
 const delAllMenuFromCart = () => {
-    cartMenu = [];
-    saveCartToStorage(currentUser, cartMenu);
-}
+  cartMenu = [];
+  saveCartToStorage(currentUser, cartMenu);
+};
 
 // Event handler for the 'Submit Order' button
 const submitOrderHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const price_total = document.querySelector('#total-price').textContent;
-    // Client knows only user's first name
-    const user_id = document.querySelector('p.username').textContent;
+  const price_total = document.querySelector("#total-price").textContent;
 
-    // Send a PUT request to the API endpoint
-    const response = await fetch("/api/order/order-summary", {
-        method: "POST",
-        body: JSON.stringify({ item_list: cartMenu, price_total, user_id }),
-        headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-        delAllMenuFromCart();
-        const body = await response.json();
-        document.location.replace(`/orderhistory/${body.id}`);
-        //document.location.replace("/");
-    } else {
-        alert(response.statusText);
-    }
+  let item_list = [];
+  for (i = 0; i < cartMenu.length; i++) {
+    item_list.push(cartMenu[i].id);
+  }
+
+  // Send a POST request to the API endpoint
+  const response = await fetch("/api/order/order-summary", {
+    method: "POST",
+    body: JSON.stringify({ item_list, price_total }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    delAllMenuFromCart();
+    const body = await response.json();
+    document.location.replace(`/orderhistory/${body.id}`);
+    //document.location.replace("/");
+  } else {
+    alert(response.statusText);
+  }
 };
 
 // Click a menu card
 menuEls.forEach((menuCard) => {
-    menuCard.addEventListener("click", selectMenuHandler);
+  menuCard.addEventListener("click", selectMenuHandler);
 });
 
 // 'Submit Order' button
 document
-    .querySelector("#submit-order-btn")
-    .addEventListener("click", submitOrderHandler);
+  .querySelector("#submit-order-btn")
+  .addEventListener("click", submitOrderHandler);
 
 // Initialize the cart
 const initCart = () => {
-    cartMenu = getCartFromStorage(currentUser);
+  cartMenu = getCartFromStorage(currentUser);
 
-    if (cartMenu) {
-        renderCart();
-    } else {
-        cartMenu = [];
-    }
+  if (cartMenu) {
+    renderCart();
+  } else {
+    cartMenu = [];
+  }
 };
 
 initCart();
