@@ -6,6 +6,9 @@ const withAuth = require("../../utils/auth");
 router.get("/:id", async (req, res) => {
   try {
     console.log(req.session.user_id);
+    if(!req.session.user_id){
+      req.session.user_id=1;
+    }
     const getUser = await User.findByPk(req.session.user_id);
     const user = getUser.get({ plain: true });
     console.log(user);
