@@ -40,7 +40,6 @@ const orderHistory_to_String = require("../../utils/helpers");
 // POST route for order - send the order in and render the order page
 router.post("/order-summary", async (req, res) => {
   try {
-    console.log(req.body);
     var orderString = "";
 
     if (req.body.item_list.length == 1) {
@@ -62,7 +61,6 @@ router.post("/order-summary", async (req, res) => {
       user_id: req.session.user_id,
       pickup_time: new Date() + Math.floor(Math.random() * 15) * 60 * 1000,
     });
-    console.log(newOrder);
 
     res.status(200).json(newOrder);
   } catch (err) {
