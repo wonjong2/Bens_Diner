@@ -135,7 +135,6 @@ const submitOrderHandler = async (event) => {
     delAllMenuFromCart();
     const body = await response.json();
     document.location.replace(`/orderhistory/${body.id}`);
-    //document.location.replace("/");
   } else {
     alert(response.statusText);
   }

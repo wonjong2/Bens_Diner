@@ -1,3 +1,4 @@
+// Logout event handler added only when there is logout menu
 if (document.querySelector('.logout-button')) {
     const logoutHandler = async (event) => {
         const response = await fetch('/api/users/logout', {
