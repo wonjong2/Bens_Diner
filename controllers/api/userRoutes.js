@@ -14,10 +14,10 @@ router.get("/login", async (req, res) => {
 });
 
 // at api/user when the user requests to log in then create a new user and save the information as well as set the logged in variable to true
-router.post("/", async (req, res) => {
+router.post("/sign-up", async (req, res) => {
   try {
     console.log(req.body);
-    const userData = await User.create(req.body);
+    const userData = await User.create(...req.body);
 
     req.session.save(() => {
       req.session.user_id = userData.user_id;
