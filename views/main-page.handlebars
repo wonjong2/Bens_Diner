@@ -5,8 +5,8 @@
       <nav class="navbar bg_img justify-content-between">
         <h1 class="px-2 header_text"><a href="/">Ben's Diner</a></h1>
         <div class="header_text">
-          {{#if logged_in}}
-            <p class="username d-inline px-2">{{user.fname}}</p>
+          {{#if loggedIn}}
+            <p class="username d-inline px-2">{{user.first_name}}</p>
             <a
               class="nav_text d-inline px-2 logout-button"
               type="submit"

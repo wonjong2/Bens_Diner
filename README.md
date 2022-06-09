@@ -8,70 +8,107 @@
 
 ## Assignment Description
 
-This is a Javascript homework assignment for the UW Bootcamp. The goal of the assignment is to create the backend functionality for an online "warehouse". The Javascript file is the primary challenge of this assignment with user information persisting, stored, and accessed using mySQL databases. "Inquirer", "express", "mySQL2", and "sequelize" NPM packages shall be used. The entirety of the application will be run from the console.
+This is a Full Stack Web Development *group project* for the UW Bootcamp. The goal of the project is to create a fully functional full stack web application using all technnologies learned to date.
+(Including `HTML`, `CSS`, `JavaScript`, `Bootstrap`, `Node.JS`, `Express.JS`, `Handlebars.JS`, `MySQL`, `Sequelize ORM`, `Model-View-Controller Paradigm`, `Bcrypt`, `Express-Session`, `.env`, `connect-session-sequelize`)
 
-A mockup is provided by the instructor to demonstrate desired application appearance and functionality.
+This project stresses equal importance between project management and web development.
+A development process shall be identified and agreed upon to assist with pushing code, pulling code, and merging code conflicts on GitHub. This process shall include the division of labor and tasks.
 
-The original user story, acceptance criteria, and mockup for the assignment is copied to the end of this document.
+A mockup / wireframe shall be created by an individual within the project team and used as a visual goal. (`UX/UI`)
 
-## Assignment Scope
+A project user story and acceptance criteria shall be created by the project team and used as a functionality goal. (`Product Manager/Owner`)
 
-Write the backend javascript code to allow users to Create, Retrieve, Update, and Destroy (CRUD) database information using routes between an express session and the server side mySQL database.
-Testing and usage of routes will be through `Insomnia`.
+Project management shall be `Agile` and augmented with `Kanban` style organization: with individual tasks divided, assigned, and tracked.
 
-Portions of the backend code have been provided. The focus of the assignement is to complete all route files, and models for the database.
+The group developed user story, acceptance criteria, and mockup for the assignment are copied to the end of this document.
+
+## Project Scope
+
+FOOD APP!
+Create a full stack web page application that allows restaurant customers to view a digital menu, and order food without a human server interface.
+Menu items shall be displayed and added to a shopping cart on click, with routes navigating various button events.
+The temporary shopping cart will save data using `local storage`.
+The permanent order history will available in a `MySQL database`.
+
+Testing routes will be available using `Insomnia`.
+
+No starting code has been provided.
+No guidance, project choices, or project direction has been provided.
 
 ## Generalized Tasks
 
--   Use routes to navigate and access information
--   Write a javascript file with multiple functions to handle CRUD operations.
--   Write multiple route request in Insomnia to manipulate server side databases
+Web Development Tasks:
+- Use the Bootstrap front-end framework and populate the DOM with: buttons, text areas, and cards in an organized layout
+- Write handlebar.js files and "views" to handle custom information added to the website based on `MySQL` queries
+- Write vascript functions to handle route requests to perform CRUD operations on a `MySQL` database (Create, Retrieve, Update, Delete)  
+- Write javascript util functions for both front end and back end
+- Use `Buttons` and `listenerEvents` to add web app functionality and responsiveness
+- Use `@media queries` to add project screen adaptability and responsiveness
+- Store translate history in `localStorage`
 
-## List of Files
+Project Management Tasks:
+- Create a wireframe goal for the web app
+- Identify and divide tasks among group members 
+- Develop a process to cleanly push and pull code to GitHub to reduce merge conflicts 
+- Check in with group members and *communicate* changes and problems
 
--   README.md - This current read me file
--   gitignore - Git Ignore file to ignore node_modules, DS.Store, (Mac users), .env
--   server.js - The primary javascript file that runs the application
--   db/ - The primary directory that contains database information in JSON format
--   models/ - The directory which stores all model configurations and connectivity
--   routes/ - The dirctory which contains all route files and miscellaneous custom middleware
--   config/ - The directory which contains the connection.js file for sequelize connectivity
--   package.JSON - JSON package that stores modules and settings used
--   ~./assets/- Folder for stored screenshots and instructor provided demo.gif
-
-# Original Homework Assignment Details
+# Original Project Details
 
 ## User Story
 
 ```md
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+AS A business owner
+
+I WANT customers to order through a web app
+SO THAT I can receive orders
+I WANT customers to create an account
+SO THAT they can view past / active orders
+I WANT customers to be able to order as guest
+SO THAT they aren’t deterred by sign-in 
+I WANT customers to be able to add and delete items from their order
+SO THAT they can get exactly what they want
 ```
 
 ## Acceptance Criteria
 
 ```md
-GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete data in my database
+GIVEN a menu ordering page
+
+WHEN I visit the site for the first time
+THEN I am presented with a landing page with a QR code, log in form, and ability to check order status
+WHEN I choose to sign up
+THEN I am prompted to enter my name, email, phone number, and password
+WHEN I click the sign up button
+THEN MY user credentials are saved and I am logged into the site
+WHEN I revisit later and choose to log in
+THEN I am prompted to enter my email and password
+WHEN I select Order as Guest or I am signed into the site
+THEN I am presented with the main page with the restaurant title, tabs for food categories, food options based on default category, and a shopping cart to store orders
+WHEN I select a food option 
+THEN MY option is added to the cart with a delete option and the total price is updated
+WHEN I select the trash can next to the food item
+THEN the food item is deleted from the cart
+WHEN I select the “submit order” button in the cart
+THEN I am presented with a confirmation of my order with name and date, an order number, and estimated cook time remaining
 ```
+
+## Miro Mockups
+
+![Landing Page Mockup](./misc_assets/Landing_Page.png "Landing Page Mockup, Miro Screenshot")
+
+![Menu Mockup](./misc_assets/Menu_Page.png "Menu Mockup, Miro Screenshot")
+
+![Order Summary Mockup](./misc_assets/OrderHistory_Page.png "Order Summary Mockup, Miro Screenshot")
+
 
 ## URL to the GitHub Repository
 
 [GitHub Pages Link:https://github.com/wonjong2/Bens_Diner](https://github.com/wonjong2/Bens_Diner)
 
+
 ## URL to the Heroku Hosted Application
 
-[Ben's Diner, Back End Functionality](https://bens-diner.herokuapp.com/)
+[Ben's Diner, Heroku Deployment:https://bens-diner.herokuapp.com](https://bens-diner.herokuapp.com/)
 
 ## License
 
