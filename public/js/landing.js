@@ -28,12 +28,6 @@ const loginFormHandler = async (event) => {
   }
 };
 
-// Event handler for the 'Order as Guest' button
-// const guestOrderHandler = async (event) => {
-// event.preventDefault();
-// document.location.replace('/api/menu');
-// }
-
 // Event handler for the 'Signup' button
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -88,11 +82,6 @@ const viewStatusHandler = async (event) => {
 document
   .querySelector("#login-btn")
   .addEventListener("click", loginFormHandler);
-
-// 'Order as Guest' button
-// document
-//     .querySelector('.order-guest')
-//     .addEventListener('submit', guestOrderHandler);
 
 // 'Signup' button
 document

@@ -23,21 +23,21 @@ Portions of the backend code have been provided. The focus of the assignement is
 
 ## Generalized Tasks
 
-- Use routes to navigate and access information
-- Write a javascript file with multiple functions to handle CRUD operations.
-- Write multiple route request in Insomnia to manipulate server side databases
+-   Use routes to navigate and access information
+-   Write a javascript file with multiple functions to handle CRUD operations.
+-   Write multiple route request in Insomnia to manipulate server side databases
 
 ## List of Files
 
-- README.md - This current read me file
-- gitignore - Git Ignore file to ignore node_modules, DS.Store, (Mac users), .env
-- server.js - The primary javascript file that runs the application
-- db/ - The primary directory that contains database information in JSON format
-- models/ - The directory which stores all model configurations and connectivity
-- routes/ - The dirctory which contains all route files and miscellaneous custom middleware
-- config/ - The directory which contains the connection.js file for sequelize connectivity
-- package.JSON - JSON package that stores modules and settings used
-- ~./assets/- Folder for stored screenshots and instructor provided demo.gif
+-   README.md - This current read me file
+-   gitignore - Git Ignore file to ignore node_modules, DS.Store, (Mac users), .env
+-   server.js - The primary javascript file that runs the application
+-   db/ - The primary directory that contains database information in JSON format
+-   models/ - The directory which stores all model configurations and connectivity
+-   routes/ - The dirctory which contains all route files and miscellaneous custom middleware
+-   config/ - The directory which contains the connection.js file for sequelize connectivity
+-   package.JSON - JSON package that stores modules and settings used
+-   ~./assets/- Folder for stored screenshots and instructor provided demo.gif
 
 # Original Homework Assignment Details
 
@@ -67,11 +67,11 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## URL to the GitHub Repository
 
-[GitHub Pages Link:https://github.com/vlad-berka/E_Commerce_Backend](https://github.com/vlad-berka/E_Commerce_Backend)
+[GitHub Pages Link:https://github.com/wonjong2/Bens_Diner](https://github.com/wonjong2/Bens_Diner)
 
 ## URL to the Heroku Hosted Application
 
-![Ben's Diner, Back End Functionality](https://drive.google.com/file/d/1qfoZmEwe1KWkNX8Yh15omfxEswErjzms/view)
+[Ben's Diner, Back End Functionality](https://bens-diner.herokuapp.com/)
 
 ## License
 
