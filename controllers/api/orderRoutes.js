@@ -60,7 +60,7 @@ router.post("/order-summary", async (req, res) => {
     //Setting date with a random time. The random time corresponds to the approximate time it takes to make the order
     var future_date = new Date();
     future_date.setMinutes(
-      future_date.getMinutes() + (Math.floor(Math.random() * 10) + 5)
+      future_date.getMinutes() + (Math.floor(Math.random() * 5) + 5)
     );
 
     const newOrder = await OrderHistory.create({

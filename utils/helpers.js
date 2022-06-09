@@ -3,16 +3,17 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
-  format_time_remaining: (date) => {
+  format_time_remaining: (pickup_date) => {
     // Format date as MM/DD/YYYY
     //date is the time the order is expected to be ready
     var current_date = new Date();
-    console.log(`Current date is: ${current_date}`);
-    console.log(`Date of order is: ${date}`);
-    if (current_date > date) {
+    console.log(`Current date is:  ${current_date.getTime()}`);
+    console.log(`Date of order is: ${pickup_date.getTime()}`);
+    if (current_date > pickup_date) {
       return "Order ready for pickup!";
     } else {
-      return (date.getTime() - current_date.getTime()) / 1000;
+      console.log(`Seconds is: ${Math.floor((pickup_date.getTime() - current_date.getTime()) / 1000)}`);
+      return Math.floor((pickup_date.getTime() - current_date.getTime()) / 1000);
     }
   },
   format_amount: (amount) => {
