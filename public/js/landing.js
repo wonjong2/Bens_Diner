@@ -73,9 +73,18 @@ const viewStatusHandler = async (event) => {
   event.preventDefault();
   const orderNumber = document.querySelector("#order-number").value.trim();
 
-  if (orderNumber) {
+  const response = await fetch(`/orderhistory/${orderNumber}`, {
+    method: "GET",
+  });
+
+  if (response.ok) {
     document.location.assign(`/orderhistory/${orderNumber}`);
+  } else {
+    alert("No Order Found with this ID!");
   }
+  // if (orderNumber) {
+  //   document.location.assign(`/orderhistory/${orderNumber}`);
+  // }
 };
 
 // 'login (Order Now)' button

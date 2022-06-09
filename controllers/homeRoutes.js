@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET route for order status (will need withAuth), ID is order number
-router.get("/orderhistory/:id", withAuth, async (req, res) => {
+router.get("/orderhistory/:id", async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
@@ -52,6 +52,11 @@ router.get("/orderhistory/:id", withAuth, async (req, res) => {
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
+    }
+
+    if (!getOrderStatus) {
+      res.status(400).json({ message: "No Order Found with this ID!" });
+      return;
     }
 
     //to check with Insomnia
