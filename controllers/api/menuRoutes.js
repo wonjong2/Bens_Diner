@@ -5,6 +5,11 @@ const withAuth = require("../../utils/auth");
 // GET route for clicked on section of the menu
 router.get("/:id", async (req, res) => {
   try {
+    console.log(req.session.user_id);
+    const getUser = await User.findByPk(req.session.user_id);
+    const user = getUser.get({ plain: true });
+    console.log(user);
+
     const getCategories = await Categories.findAll();
     const categories = getCategories.map((category) =>
       category.get({ plain: true })
@@ -25,6 +30,8 @@ router.get("/:id", async (req, res) => {
     res.render("main-page", {
       categories,
       makeMenu,
+      user,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);

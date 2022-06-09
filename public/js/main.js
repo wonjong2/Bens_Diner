@@ -59,14 +59,18 @@ const renderCart = () => {
     // Create all elements for the cart menu
     let menu = document.createElement("li");
     menu.innerHTML = `              <div class="d-flex justify-content-between">
-        <p class="d-inline">${cartMenu[i].name}</p>
-        <p class="d-inline">$${cartMenu[i].price}</p>
-        <button class="deleteBlog no-button" data-index="${i}">
-          <i
-            class="avoid-clicks fa fa-trash"
-            style="font-size: 24px"
-          ></i>
-        </button>
+        <div class="d-inline">
+          <p>${cartMenu[i].name}</p>
+        </div>
+        <div class="d-inline">
+          <p class="d-inline px-2">$${cartMenu[i].price}</p>
+          <button class="deleteBlog no-button" data-index="${i}">
+            <i
+              class="avoid-clicks fa fa-trash"
+              style="font-size: 24px"
+            ></i>
+          </button>
+        </div>
       </div>`;
     cartEl.appendChild(menu);
     console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
@@ -135,7 +139,6 @@ const submitOrderHandler = async (event) => {
     delAllMenuFromCart();
     const body = await response.json();
     document.location.replace(`/orderhistory/${body.id}`);
-    //document.location.replace("/");
   } else {
     alert(response.statusText);
   }

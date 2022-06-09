@@ -28,12 +28,6 @@ const loginFormHandler = async (event) => {
   }
 };
 
-// Event handler for the 'Order as Guest' button
-// const guestOrderHandler = async (event) => {
-// event.preventDefault();
-// document.location.replace('/api/menu');
-// }
-
 // Event handler for the 'Signup' button
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -41,21 +35,19 @@ const signupFormHandler = async (event) => {
   const first_name = document.querySelector("#signup-fname").value.trim();
   const last_name = document.querySelector("#signup-lname").value.trim();
   const email = document.querySelector("#signup-email").value.trim();
-  const phone_number = document.querySelector("#signup-phone").value.trim();
   const password = document.querySelector("#signup-password").value.trim();
   const confirmPassword = document
     .querySelector("#signup-confirmPassword")
     .value.trim();
 
   if (password === confirmPassword) {
-    if (first_name && last_name && email && phone_number && password) {
-      const response = await fetch("/api/users/", {
+    if (first_name && last_name && email && password) {
+      const response = await fetch("/api/users/sign-up/", {
         method: "POST",
         body: JSON.stringify({
           first_name,
           last_name,
           email,
-          phone_number,
           password,
         }),
         headers: { "Content-Type": "application/json" },
@@ -79,8 +71,20 @@ const viewStatusHandler = async (event) => {
   event.preventDefault();
   const orderNumber = document.querySelector("#order-number").value.trim();
 
-  if (orderNumber) {
+  const response = await fetch(`/orderhistory/${orderNumber}`, {
+    method: "GET",
+  });
+
+  if (response.ok) {
+    // If successful, redirect the browser to the main page
     document.location.assign(`/orderhistory/${orderNumber}`);
+  } else {
+    const text = await response.json();
+    if (text.message) {
+      alert(text.message);
+    } else {
+      alert(response.statusText);
+    }
   }
 };
 
@@ -88,11 +92,6 @@ const viewStatusHandler = async (event) => {
 document
   .querySelector("#login-btn")
   .addEventListener("click", loginFormHandler);
-
-// 'Order as Guest' button
-// document
-//     .querySelector('.order-guest')
-//     .addEventListener('submit', guestOrderHandler);
 
 // 'Signup' button
 document

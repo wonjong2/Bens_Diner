@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET route for order status (will need withAuth), ID is order number
-router.get("/orderhistory/:id", withAuth, async (req, res) => {
+router.get("/orderhistory/:id", async (req, res) => {
   try {
     const findOrder = await OrderHistory.findByPk(req.params.id, {
       include: [
@@ -24,19 +24,19 @@ router.get("/orderhistory/:id", withAuth, async (req, res) => {
       ],
     });
 
+    if (!findOrder) {
+      res.status(400).json({ message: "No Order Found with this ID!" });
+      return;
+    }
+
     // console.log(findOrder);
     const getOrderStatus = findOrder.get({ plain: true });
-    console.log(getOrderStatus);
+    console.log("Get order status is:", getOrderStatus);
 
     var item_list_array = orderHistory_to_Array(getOrderStatus.item_list);
     console.log(`item_list_array is: `, item_list_array);
 
     try {
-      // const menu_list_all = await Menu.findAll({
-      //   where: {
-      //     id: item_list_array
-      //   }
-      // });
       var menu_list_all = [];
 
       for (let i = 0; i < item_list_array.length; i++) {
@@ -47,11 +47,14 @@ router.get("/orderhistory/:id", withAuth, async (req, res) => {
 
       console.log("Menu list all is: ", menu_list_all);
       var menu_list = menu_list_all.map((item) => item.get({ plain: true }));
-      // const menu_list = menu_list_all.get({ plain: true });
-      // console.log("Menu list is: ", menu_list);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
+    }
+
+    if (req.session.user_id != getOrderStatus.user.user_id) {
+      res.status(500).json({ message: "This is not your order!" });
+      return;
     }
 
     //to check with Insomnia

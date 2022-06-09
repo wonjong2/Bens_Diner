@@ -40,16 +40,15 @@
 
           <ul class="list-group list-group-flush">
             {{#each menu_list as |item|}}
-            <li class="list-group-item">#{{item.id}}. {{item.name}}</li>
+            <li class="list-group-item">{{item.name}}</li>
             {{/each}}
           </ul>
 
           <div class="card-body">
             <h6 class="card-title">Estimated Time Remaining</h6>
             <p class="card-text countdown_timer">{{format_time_remaining
-              getOrderStatus.date_created
+              getOrderStatus.pickup_time
               }}</p>
-            <p class="card-text countdown_timer">00:00</p>
           </div>
 
           <div class="card-body w-100">
