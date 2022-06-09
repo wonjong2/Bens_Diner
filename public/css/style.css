@@ -306,7 +306,7 @@ form .button input[type="submit"],
   height: 100%;
 }
 
-#menuContainer .menu_item button {
+.no-button {
   background: transparent;
   border: none !important;
 }
@@ -319,9 +319,18 @@ form .button input[type="submit"],
   font-size: small;
 }
 
+#menuContainer .card-body .card_price {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
 #menuContainer .menu_item img {
   max-height: 150px;
   width: auto;
+}
+
+#menuContainer .menu_item .img_container {
+  max-width: 150px;
 }
 
 #cart {
@@ -329,6 +338,46 @@ form .button input[type="submit"],
   height: 100vh;
   position: fixed;
   right: 0;
+}
+
+#cart .total_field {
+  border-top: solid 1px gray;
+}
+
+#cart .no-button i {
+  color: var(--red);
+}
+
+#cart #cart-header {
+  padding-bottom: 10px;
+}
+
+#cart #total-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#submit-order-btn {
+  font-family: monospace;
+  background: var(--red);
+  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+  border-left: 6px inset rgba(0, 0, 0, 0.5);
+  border-right: 6px inset rgba(255, 255, 255, 0.5);
+  border-top: 6px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  min-width: 200px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  width: auto;
+}
+
+#submit-order-btn:focus,
+#submit-order-btn:hover {
+  background: #a81000;
 }
 
 /* ORDER SUMMARY PAGE */
@@ -407,5 +456,10 @@ form .button:active {
   header h4 {
     font-size: 8vw;
     letter-spacing: -2px;
+  }
+
+  #cart {
+    height: fit-content;
+    position: static;
   }
 }

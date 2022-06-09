@@ -22,8 +22,8 @@
       <!-- menu -->
       <div id="menu_nav_container">
         <!-- menu nav -->
-        <nav class="d-flex justify-content-center">
-          <ul class="menu_nav navbar-nav d-flex flex-row mt-3 mt-lg-0">
+        <nav class="d-flex justify-content-center collapse navbar-collapse">
+          <ul class="menu_nav navbar-nav d-flex flex-row mt-lg-0">
             {{>categories}}
           </ul>
         </nav>
@@ -38,61 +38,23 @@
 
     <!-- cart -->
     <aside class="col-sm-3 p-0" id="cart">
-      <div class="py-5">
+      <div class="py-5 px-5">
         <div id="cart-header">
-          <h4 class="d-flex justify-content-center">Cart</h4>
+          <h4>Your Order</h4>
         </div>
 
-        <div id="cart-items">
-          <ul id="cart-list">
-            <li>
-              <div class="d-flex justify-content-between">
-                <p class="d-inline">Item Name</p>
-                <p class="d-inline">$$$</p>
-                <button class="deleteBlog no-button">
-                  <i
-                    class="avoid-clicks fa fa-trash"
-                    style="font-size: 24px"
-                  ></i>
-                </button>
-              </div>
-            </li>
-            <li>
-              <div class="d-flex justify-content-between">
-                <p class="d-inline">Item Name</p>
-                <p class="d-inline">$$$</p>
-                <button class="deleteBlog no-button">
-                  <i
-                    class="avoid-clicks fa fa-trash"
-                    style="font-size: 24px"
-                  ></i>
-                </button>
-              </div>
-            </li>
-            <li>
-              <div class="d-flex justify-content-between">
-                <p class="d-inline">Item Name</p>
-                <p class="d-inline">$$$</p>
-                <button class="deleteBlog no-button">
-                  <i
-                    class="avoid-clicks fa fa-trash"
-                    style="font-size: 24px"
-                  ></i>
-                </button>
-              </div>
-            </li>
-          </ul>
+        <div id="cart-items d-flex justify-content-between">
+          <ul id="cart-list"></ul>
 
-          <div class="d-flex justify-content-between">
-            <h5 class="d-inline">Total:</h5>
-            <p class="d-inline" id="total-price">$$$</p>
+          <div class="d-flex justify-content-between pt-2 total_field">
+            <h4>Total:</h4>
+            <p id="total-price">0.00</p>
           </div>
         </div>
       </div>
 
-      <div class="field button">
-        <div class="button-layer"></div>
-        <button><a href="/" id="submit-order-btn">Submit Order</a></button>
+      <div class="field button d-flex justify-content-center">
+        <button class="no-button"><a href="/" id="submit-order-btn">Submit Order</a></button>
       </div>
     </aside>
     <!-- cart -->
