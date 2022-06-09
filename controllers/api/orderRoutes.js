@@ -70,7 +70,7 @@ router.post("/order-summary", async (req, res) => {
   }
 });
 
-// DELETE route for deleting items from a cart
+// DELETE route for cancelling an order
 router.delete("/order-summary/:id", async (req, res) => {
   try {
     const deleteOrder = await OrderHistory.destroy({
