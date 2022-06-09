@@ -43,7 +43,7 @@ const signupFormHandler = async (event) => {
 
   if (password === confirmPassword) {
     if (first_name && last_name && email && phone_number && password) {
-      const response = await fetch("/api/users/", {
+      const response = await fetch("/api/users", {
         method: "POST",
         body: JSON.stringify({
           first_name,
@@ -78,13 +78,16 @@ const viewStatusHandler = async (event) => {
   });
 
   if (response.ok) {
+    // If successful, redirect the browser to the main page
     document.location.assign(`/orderhistory/${orderNumber}`);
   } else {
-    alert("No Order Found with this ID!");
+    const text = await response.json();
+    if (text.message) {
+      alert(text.message);
+    } else {
+      alert(response.statusText);
+    }
   }
-  // if (orderNumber) {
-  //   document.location.assign(`/orderhistory/${orderNumber}`);
-  // }
 };
 
 // 'login (Order Now)' button
