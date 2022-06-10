@@ -40,7 +40,7 @@ const signupFormHandler = async (event) => {
     .querySelector("#signup-confirmPassword")
     .value.trim();
 
-  if (password === confirmPassword) {
+  if ((password === confirmPassword) & (password.length > 8)) {
     if (first_name && last_name && email && password) {
       const response = await fetch("/api/users/sign-up/", {
         method: "POST",
@@ -61,7 +61,7 @@ const signupFormHandler = async (event) => {
     }
   } else {
     alert(
-      "Password and Confirm Password do not match. Please enter them again!"
+      "Passwords do not match OR password must be 8 characters. Please try again!"
     );
   }
 };
@@ -112,6 +112,4 @@ document
   .addEventListener("click", viewStatusHandler);
 
 // 'QRCode' button
-document
-.querySelector("#qrCode")
-.addEventListener("click", continueAsGuest);
+document.querySelector("#qrCode").addEventListener("click", continueAsGuest);
