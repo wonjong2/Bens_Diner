@@ -19,6 +19,7 @@ router.post("/order-summary", async (req, res) => {
       price_total: req.body.price_total,
       user_id: req.session.user_id,
       pickup_time: future_date,
+      loggedIn: req.session.logged_in,
     });
 
     res.status(200).json(newOrder);
