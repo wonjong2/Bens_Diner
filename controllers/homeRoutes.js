@@ -6,10 +6,6 @@ const { orderHistory_to_Array } = require("../utils/helpers");
 // GET for the homepage
 router.get("/", async (req, res) => {
   try {
-    // Landing page should be logged out state
-    if (req.session.logged_in) {
-      req.session.destroy();
-    }
     res.render("landing-page");
   } catch (err) {
     console.log(err);
