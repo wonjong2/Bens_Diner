@@ -35,21 +35,19 @@ const signupFormHandler = async (event) => {
   const first_name = document.querySelector("#signup-fname").value.trim();
   const last_name = document.querySelector("#signup-lname").value.trim();
   const email = document.querySelector("#signup-email").value.trim();
-  const phone_number = document.querySelector("#signup-phone").value.trim();
   const password = document.querySelector("#signup-password").value.trim();
   const confirmPassword = document
     .querySelector("#signup-confirmPassword")
     .value.trim();
 
-  if (password === confirmPassword) {
-    if (first_name && last_name && email && phone_number && password) {
-      const response = await fetch("/api/users/", {
+  if ((password === confirmPassword) & (password.length > 8)) {
+    if (first_name && last_name && email && password) {
+      const response = await fetch("/api/users/sign-up/", {
         method: "POST",
         body: JSON.stringify({
           first_name,
           last_name,
           email,
-          phone_number,
           password,
         }),
         headers: { "Content-Type": "application/json" },
@@ -63,7 +61,7 @@ const signupFormHandler = async (event) => {
     }
   } else {
     alert(
-      "Password and Confirm Password do not match. Please enter them again!"
+      "Passwords do not match OR password must be 8 characters. Please try again!"
     );
   }
 };
@@ -78,13 +76,24 @@ const viewStatusHandler = async (event) => {
   });
 
   if (response.ok) {
+    // If successful, redirect the browser to the main page
     document.location.assign(`/orderhistory/${orderNumber}`);
   } else {
-    alert("No Order Found with this ID!");
+    const text = await response.json();
+    if (text.message) {
+      alert(text.message);
+    } else {
+      alert(response.statusText);
+    }
   }
-  // if (orderNumber) {
-  //   document.location.assign(`/orderhistory/${orderNumber}`);
-  // }
+};
+
+// Event handler for the 'Continue as Guest' button on the QR Code
+const continueAsGuest = async (event) => {
+  event.preventDefault();
+
+  // If successful, redirect the browser to the menu page
+  document.location.assign(`/api/menu/6`);
 };
 
 // 'login (Order Now)' button
@@ -101,3 +110,6 @@ document
 document
   .querySelector("#check-order-btn")
   .addEventListener("click", viewStatusHandler);
+
+// 'QRCode' button
+document.querySelector("#qrCode").addEventListener("click", continueAsGuest);

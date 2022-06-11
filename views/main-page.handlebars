@@ -5,15 +5,12 @@
       <nav class="navbar bg_img justify-content-between">
         <h1 class="px-2 header_text"><a href="/">Ben's Diner</a></h1>
         <div class="header_text">
-          {{#if logged_in}}
-            <p class="username d-inline px-2">{{user.fname}}</p>
-            <a
-              class="nav_text d-inline px-2 logout-button"
-              type="submit"
-            >Logout</a>
+          {{#if loggedIn}}
+          <p class="username d-inline px-2">{{user.first_name}}</p>
+          <a class="nav_text d-inline px-2 logout-button" type="submit">Logout</a>
           {{else}}
-            <p class="username d-inline px-2">Guest</p>
-            <a class="nav-link d-inline px-2" href="/">Login</a>
+          <p class="username d-inline px-2">Guest</p>
+          <a class="nav-link d-inline px-2" href="/">Login</a>
           {{/if}}
         </div>
       </nav>
@@ -46,6 +43,11 @@
         <div id="cart-items d-flex justify-content-between">
           <ul id="cart-list" class="p-0"></ul>
 
+          <div class="d-flex justify-content-between pt-2 gratuity_field">
+            <p>Automatic Gratuity:</p>
+            <p id="gratuity-price">18%</p>
+          </div>
+
           <div class="d-flex justify-content-between pt-2 total_field">
             <h4>Total:</h4>
             <p id="total-price">0.00</p>
@@ -62,13 +64,9 @@
 </main>
 
 {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+<script src="/js/logout.js"></script>
 {{/if}}
 
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-  crossorigin="anonymous"
-></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="/js/main.js"></script>
-<script src="/js/logout.js"></script>
