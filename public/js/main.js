@@ -75,7 +75,7 @@ const renderCart = () => {
     cartEl.appendChild(menu);
     console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
     // Calculate the total price for the cart menu
-    totalPrice += cartMenu[i].price * cartMenu[i].qty *1.18;
+    totalPrice += cartMenu[i].price * cartMenu[i].qty * 1.18;
   }
   const totPriceEl = document.querySelector("#total-price");
   totPriceEl.textContent = totalPrice.toFixed(2);
