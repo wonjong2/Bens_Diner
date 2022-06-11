@@ -58,7 +58,7 @@ const renderCart = () => {
   for (let i = 0; i < cartMenu.length; i++) {
     // Create all elements for the cart menu
     let menu = document.createElement("li");
-    menu.innerHTML = `              <div class="d-flex justify-content-between">
+    menu.innerHTML = `              <div class="d-flex justify-content-between flex-wrap">
         <div class="d-inline">
           <p>${cartMenu[i].name}</p>
         </div>
