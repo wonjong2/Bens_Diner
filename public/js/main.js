@@ -58,7 +58,7 @@ const renderCart = () => {
   for (let i = 0; i < cartMenu.length; i++) {
     // Create all elements for the cart menu
     let menu = document.createElement("li");
-    menu.innerHTML = `              <div class="d-flex justify-content-between">
+    menu.innerHTML = `              <div class="d-flex justify-content-between flex-wrap">
         <div class="d-inline">
           <p>${cartMenu[i].name}</p>
         </div>
@@ -75,7 +75,7 @@ const renderCart = () => {
     cartEl.appendChild(menu);
     console.log(typeof cartMenu[i].price, typeof cartMenu[i].qty);
     // Calculate the total price for the cart menu
-    totalPrice += cartMenu[i].price * cartMenu[i].qty *1.18;
+    totalPrice += cartMenu[i].price * cartMenu[i].qty * 1.18;
   }
   const totPriceEl = document.querySelector("#total-price");
   totPriceEl.textContent = totalPrice.toFixed(2);

@@ -20,7 +20,7 @@
       <div id="menu_nav_container">
         <!-- menu nav -->
         <nav class="d-flex justify-content-center collapse navbar-collapse">
-          <ul class="menu_nav navbar-nav d-flex flex-row mt-lg-0">
+          <ul class="menu_nav navbar-nav d-flex flex-row mt-lg-0 flex-wrap">
             {{>categories}}
           </ul>
         </nav>
@@ -35,13 +35,13 @@
 
     <!-- cart -->
     <aside class="col-sm-3 p-0" id="cart">
-      <div class="py-5 px-5">
+      <div class="p-lg-5 px-2 py-5">
         <div id="cart-header">
           <h4>Your Order</h4>
         </div>
 
         <div id="cart-items d-flex justify-content-between">
-          <ul id="cart-list"></ul>
+          <ul id="cart-list" class="p-0"></ul>
 
           <div class="d-flex justify-content-between pt-2 gratuity_field">
             <p>Automatic Gratuity:</p>
