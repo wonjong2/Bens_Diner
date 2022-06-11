@@ -357,6 +357,10 @@ form .button input[type="submit"],
   font-weight: bold;
 }
 
+#cart-list li {
+  list-style: none;
+}
+
 #submit-order-btn {
   font-family: monospace;
   background: var(--red);
@@ -459,7 +463,13 @@ form .button:active {
   }
 
   #cart {
-    height: fit-content;
     position: static;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #cart {
+    height: fit-content;
   }
 }
